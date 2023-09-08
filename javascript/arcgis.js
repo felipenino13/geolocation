@@ -24,6 +24,9 @@ require([
     //basemap: "arcgis-navigation" //navigation
 });
 
+
+
+
 //Create a mapview
 
 const view = new MapView({
@@ -32,6 +35,15 @@ const view = new MapView({
     zoom: 6, // Zoom level
     container: "viewDiv" // Div element
 });
+
+
+
+
+
+
+
+
+
 
 //add search widget
 const search = new Search({  //Add Search widget
@@ -77,24 +89,78 @@ const layer = new FeatureLayer({
 
    // Define a pop-up for Trailheads
    const popupTrailheads = {
-    "title": "municipios",
+    "title": "Descripción",
     "content": "<b>Municipio:</b> {Municipio}<br> <b>Departamento:</b> {departamento}<br> <b>Descripción:</b> {description}<br> <b>Población:</b> {poblacion}<br> <img src='https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/municipios/FeatureServer/0/{OBJECTID}/attachments/{OBJECTID}'>"
   }
+
 
   const trailheads = new FeatureLayer({
     url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/municipios/FeatureServer/0",
     outFields: ["description","CITY_JUR","X_STREET","PARKING","ELEV_FT"],
-    popupTemplate: popupTrailheads
+    popupTemplate: popupTrailheads,   
+
+    
   });
+
+  
+
+
+
+  
+  
 
   map.add(trailheads);
 
-  const layer2 = new FeatureLayer({
-    url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ufh/FeatureServer/0"
+  
+  
+  // Departamentos layer
+
+  // Municipios layer estilos graficos
+
+  const departamentosRenderer = {
+    "type": "simple",
+    "symbol": {
+      "type": "simple-line",
+      "width": "1.75px",
+      "color": "yellow"
+    }
+  }
+
+  const featureLayer = new FeatureLayer({
+    url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ufh/FeatureServer/0",
+    //llama los estilos
+    renderer: departamentosRenderer,
   });
   
-  map.add(layer2);
+  map.add(featureLayer);
 
+  // Municipios layer estilos graficos
+
+  const municipiosRenderer = {
+    "type": "simple",
+    "symbol": {
+      "type": "simple-line",
+      "width": "0.75px",
+      "color": "green"
+    }
+  }
+
+  // Municipios layer
+  const featureLayer2 = new FeatureLayer({
+    url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/mgn2022_mpio_politico/FeatureServer/0",
+    //llama los estilos
+    renderer: municipiosRenderer,
+  });
+
+  
+  
+  map.add(featureLayer2);
+
+
+
+  
+   
 
 
 });
+
