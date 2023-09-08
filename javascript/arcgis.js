@@ -112,7 +112,7 @@ const layer = new FeatureLayer({
   map.add(trailheads);
 
   
-  
+  /*
   // Departamentos layer
 
   // Municipios layer estilos graficos
@@ -122,7 +122,9 @@ const layer = new FeatureLayer({
     "symbol": {
       "type": "simple-line",
       "width": "1.75px",
-      "color": "yellow"
+      "color": "yellow",
+      "border-style": "dotted"
+      
     }
   }
 
@@ -133,6 +135,7 @@ const layer = new FeatureLayer({
   });
   
   map.add(featureLayer);
+  */
 
   // Municipios layer estilos graficos
 
@@ -140,8 +143,10 @@ const layer = new FeatureLayer({
     "type": "simple",
     "symbol": {
       "type": "simple-line",
-      "width": "0.75px",
-      "color": "green"
+      "width": "1.5px",
+      "color": "#65876B",
+      "style": "short-dot",
+      
     }
   }
 
