@@ -111,7 +111,7 @@ require([
     // Define a pop-up for Trailheads
     const popupTrailheads = {
       "title": "Descripción",
-      "content": "<b>Municipio:</b> {Municipio}<br> <b>Departamento:</b> {departamento}<br> <b>Descripción:</b> {description}<br> <b>Población:</b> {poblacion}<br> <img src='https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/municipios/FeatureServer/0/{OBJECTID}/attachments/{OBJECTID}'>"
+      "content": "<b>Municipio:</b> {Municipio}<br> <b>Departamento:</b> {departamento}<br><hr><b>UFH encontradas:</b> {ufhEncontradas}<br><b>UFH líder</b> {ufhLider}<br><hr><b>Líneas productivas:</b> {lineasProductivas}<br> <b>Líneas agrícolas:</b> {lineasAgricolas}<br><b>Líneas pecuarias:</b> {lineasPecuarias}<br><br><img src='https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/municipios/FeatureServer/0/{OBJECTID}/attachments/{OBJECTID}'>"
     }
 
 
@@ -155,7 +155,7 @@ require([
       "type": "simple",
       "symbol": {
         "type": "simple-line",
-        "width": "1.5px",
+        "width": "2px",
         "color": "#65876B",
         "style": "short-dot",
       }
