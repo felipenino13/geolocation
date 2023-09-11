@@ -19,7 +19,7 @@ body,
 
 .filtromunicipios{
     position: fixed;
-    top: 80%;
+    top: 70%;
     z-index: 2;
     right: 1%;
     width: 12%;
@@ -34,4 +34,107 @@ h2{
     margin-block-end: 0px;
     padding-bottom: 0;
     margin-bottom: 0 !important;
+}
+
+.escala_UAF{
+    position: absolute;
+    z-index: 1;
+    bottom: 10%;
+    left: 25%;
+    display: flex;
+    width: 60%;
+    font-size: 11px;
+}
+
+/*UFH por color*/
+
+.uno_ufh{
+    background: #4E4B87;
+    color: white;
+    width: 7.69%;
+    text-align: center;
+}
+
+.dos_ufh{
+    background: #0C6097;
+    color: white;
+    width: 7.69%;
+    text-align: center;
+}
+
+.tres_ufh{
+    background: #2D95C0;
+    color: white;
+    width: 7.69%;
+    text-align: center;
+}
+
+.cuatro_ufh{
+    background: #99C1D4;
+    color: black;
+    width: 7.69%;
+    text-align: center;
+}
+
+.cinco_ufh{
+    background: #1A6B42;
+    color: white;
+    width: 7.69%;
+    text-align: center;
+}
+
+.seis_ufh{
+    background: #5CAA84;
+    color: white;
+    width: 7.69%;
+    text-align: center;
+}
+
+.siete_ufh{
+    background: #ADBA3E;
+    color: black;
+    width: 7.69%;
+    text-align: center;
+}
+
+.ocho_ufh{
+    background: #F6E5A9;
+    color: black;
+    width: 7.69%;
+    text-align: center;
+}
+
+.nueve_ufh{
+    background: #F1D674;
+    color: black;
+    width: 7.69%;
+    text-align: center;
+}
+
+.diez_ufh{
+    background: #FB8148;
+    color: white;
+    width: 7.69%;
+    text-align: center;
+}
+
+.once_ufh{
+    background: #FB77A9;
+    color: white;
+    width: 7.69%;
+    text-align: center;
+}
+
+.doce_ufh{
+    background: #8B4841;
+    color: white;
+    width: 7.69%;
+    text-align: center;
+}
+
+.trece_ufh{
+    background: #57524F;
+    color: white;
+    width: 7.69%;
+    text-align: center;
 }
