@@ -109,7 +109,7 @@ require([
     map.add(layer);
 
     // Define a pop-up for Trailheads
-    let x = "<img src='https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/municipios/FeatureServer/0/{OBJECTID}/attachments/{OBJECTID}'><br><b>Municipio:</b> {Municipio}<br> <b>Departamento:</b> {departamento}<br><hr><b>UFH encontradas:</b> {ufhEncontradas}<br><b>UFH líder</b> {ufhLider}<br><hr><b>Líneas productivas:</b> {lineasProductivas}<br> <b>Líneas agrícolas:</b> {lineasAgricolas}<br><b>Líneas pecuarias:</b> {lineasPecuarias}<br><br>";
+    let x = "<img src='https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/municipios/FeatureServer/0/{OBJECTID}/attachments/{OBJECTID}'><br><h2>{Municipio}</h2><p>{departamento}</p><hr><b>UFH encontradas:</b> {ufhEncontradas}<br><b>UFH líder</b> {ufhLider}<br><hr><b>Líneas productivas:</b> {lineasProductivas}<br> <b>Líneas agrícolas:</b> {lineasAgricolas}<br><b>Líneas pecuarias:</b> {lineasPecuarias}<br><br>";
 
     const popupTrailheads = {
       "title": "Descripción",
