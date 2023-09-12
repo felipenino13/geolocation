@@ -9,7 +9,7 @@ require([
     "esri/layers/FeatureLayer",
     
     //search
-    "esri/widgets/Search"
+    "esri/widgets/Search",
 
   ], 
 
@@ -108,19 +108,31 @@ require([
   
     map.add(layer);
 
+    
     // Define a pop-up for Trailheads
-    let x = "<img src='https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/municipios/FeatureServer/0/{OBJECTID}/attachments/{OBJECTID}'><br><h2>{Municipio}</h2><p>{departamento}</p><hr><b>UFH encontradas:</b> {ufhEncontradas}<br><b>UFH líder</b> {ufhLider}<br><hr><b>Líneas productivas:</b> {lineasProductivas}<br> <b>Líneas agrícolas:</b> {lineasAgricolas}<br><b>Líneas pecuarias:</b> {lineasPecuarias}<br><br>";
+    let x = "<img src='https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/municipios/FeatureServer/0/{OBJECTID}/attachments/{OBJECTID}'><br><h2>{Municipio}</h2><p>{departamento}</p><hr><b>UFH encontradas:</b> {ufhEncontradas}<br><b>UFH líder</b> {ufhLider}<br><hr><b>Líneas productivas:</b> {lineasProductivas}<br> <b>Líneas agrícolas:</b> {lineasAgricolas}<br><b>Líneas pecuarias:</b> {lineasPecuarias}<br>";
+    
+    // Action descripción
+    const measureThisAction = {
+      title: "UFH Aplicables",
+      id: "measure-this",
+      image: "Measure_Distance16.png",
+    }
+
+    
 
     const popupTrailheads = {
-      "title": "Descripción",
-      "content": x
-
+      title: "Descripción",
+      content: x,
+      actions: [measureThisAction]
     }
+
+    
 
 
     const trailheads = new FeatureLayer({
       url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/municipios/FeatureServer/0",
-      outFields: ["description","CITY_JUR","X_STREET","PARKING","ELEV_FT"],
+      outFields: ["*"], // Consulta todos los atributos
       popupTemplate: popupTrailheads,   
 
     
@@ -128,6 +140,23 @@ require([
 
     map.add(trailheads);
 
+
+
+    
+
+    /*
+
+    document.getElementsByClassName("btn").addEventListener("onclick", function() {
+      let y = "Hola mundo"
+      if(boton.checked){
+      console.log(y)
+      }
+      else{
+        console.log("adios")
+      }
+    });
+
+    */
   
     /*
     // Departamentos layer
@@ -229,7 +258,7 @@ require([
         "type": "simple",
         "symbol": {
           "type": "simple-line",
-          "width": "1.5px",
+          "width": "2.5px",
           "color": "#65876B",
           "style": "short-dot",
         }
@@ -247,14 +276,177 @@ require([
       } 
       
       else{
+        console.log("listo")
         map.layers.removeAt(3)
       }
 
     });
     
+    //Capa de las ufh adjudicables de pradera
+
+    document.getElementById("ufh").addEventListener("change", function() {
+
+
+      /*renderer capa*/
+      const ufhRenderer = {
+        type: "class-breaks",
+        field: "clase_ufh",
+        normalizationField: "EDUCBASECY",
+        legendOptions: {
+          title: "% of adults with no high school education"
+        },
+        defaultSymbol: {
+          type: "simple-fill",
+          color: [255, 255, 255, 0.5],
+          //style: "backward-diagonal",
+          outline: {
+            width: 0.5,
+            color: [50, 50, 50, 0.5]
+          },
+        },
+        defaultLabel: "no data",
+          classBreakInfos: [
+            {
+              minValue: 1,
+              maxValue: 2,
+              symbol: {
+                "type": "simple-fill",
+                "width": "1.5px",
+                "color": [78, 75, 135, 0.5],
+                "style": "short-dot",
+              },
+              label: "< 5%"
+            },
+            {
+              minValue: 2,
+              maxValue: 3,
+              symbol: {
+                "type": "simple-fill",
+                "width": "1.5px",
+                "color": [0, 166, 255, 0.5],
+                "style": "short-dot",
+              },
+              label: "< 5%"
+            },
+            {
+              minValue: 3,
+              maxValue: 4,
+              symbol: {
+                "type": "simple-fill",
+                "width": "1.5px",
+                "color": [45, 149, 192, 0.5],
+                "style": "short-dot",
+              },
+              label: "< 5%"
+            },
+            {
+              minValue: 4,
+              maxValue: 5,
+              symbol: {
+                "type": "simple-fill",
+                "width": "1.5px",
+                "color": [153, 193, 212, 0.5],
+                "style": "short-dot",
+              },
+              label: "< 5%"
+            },
+            {
+              minValue: 5,
+              maxValue: 6,
+              symbol: {
+                "type": "simple-fill",
+                "width": "1.5px",
+                "color": [53, 161, 75, 0.5],
+                "style": "short-dot",
+              },
+              label: "< 5%"
+            },
+            {
+              minValue: 6,
+              maxValue: 7,
+              symbol: {
+                "type": "simple-fill",
+                "width": "1.5px",
+                "color": [162, 193, 63, 0.5],
+                "style": "short-dot",
+              },
+              label: "< 5%"
+            },
+            {
+              minValue: 7,
+              maxValue: 8,
+              symbol: {
+                "type": "simple-fill",
+                "width": "1.5px",
+                "color": [245, 229, 170, 0.5],
+                "style": "short-dot",
+              },
+              label: "< 5%"
+            },
+            {
+              minValue: 8,
+              maxValue: 9,
+              symbol: {
+                "type": "simple-fill",
+                "width": "1.5px",
+                "color": [250, 216, 91, 0.5],
+                "style": "short-dot",
+              },
+              label: "< 5%"
+            },
+            {
+              minValue: 9,
+              maxValue: 10,
+              symbol: {
+                "type": "simple-fill",
+                "width": "1.5px",
+                "color": [251, 129, 72, 0.5],
+                "style": "short-dot",
+              },
+              label: "< 5%"
+            },
+            {
+              minValue: 10,
+              maxValue: 11,
+              symbol: {
+                "type": "simple-fill",
+                "width": "1.5px",
+                "color": [251, 119, 169, 0.5],
+                "style": "short-dot",
+                
+              },
+              label: "< 5%"
+            },
+            
+          ]
+      }  
+        
+        
+      
+
+      /*UFH de Pradera*/
+      const ufhPradera = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/shppraderaufhsaplicables/FeatureServer/0",
+        renderer: ufhRenderer,
+      });
+
+      
+      if(ufh.checked){
+        map.add(ufhPradera);
+      } 
+      
+      else{
+        map.layers.removeAt(3)
+      }
+
+    });
+
+    
     
     
   }
+
+  
   
 );
 
