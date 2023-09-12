@@ -21,7 +21,7 @@ body,
     position: fixed;
     top: 70%;
     z-index: 2;
-    right: 1%;
+    left: 1%;
     width: 12%;
     font-size: 14px;
     background: white;
