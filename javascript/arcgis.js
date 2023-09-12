@@ -258,7 +258,7 @@ require([
         "type": "simple",
         "symbol": {
           "type": "simple-line",
-          "width": "2.5px",
+          "width": "1.5px",
           "color": "#65876B",
           "style": "short-dot",
         }
