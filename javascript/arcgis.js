@@ -314,6 +314,7 @@ require([
                 "width": "1.5px",
                 "color": [78, 75, 135, 0.5],
                 "style": "short-dot",
+                "label": "hola como estas",
               },
               label: "< 5%"
             },
@@ -419,6 +420,8 @@ require([
             },
             
           ]
+
+          
       }  
         
         
@@ -428,7 +431,16 @@ require([
       const ufhPradera = new FeatureLayer({
         url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/shppraderaufhsaplicables/FeatureServer/0",
         renderer: ufhRenderer,
+        popupTemplate: {
+          title:"{simb_final}",
+          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}"
+        }
+
+        
       });
+
+      
+    
 
       
       if(ufh.checked){
@@ -439,6 +451,7 @@ require([
         map.layers.removeAt(3)
       }
 
+      
     });
 
     
