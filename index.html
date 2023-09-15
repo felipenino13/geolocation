@@ -22,6 +22,14 @@
                 flex-direction: column-reverse !important;
             }
 
+            .esri-ui {
+                z-index: 2 !important;
+            }
+            
+            .esri-view-surface canvas{
+                z-index: -5;
+            }
+
             /*Clases popup
             .esri-popup{
                 height: 100% !important;
@@ -81,18 +89,21 @@
     </head>
     <body>
         
-        <div class="filtromunicipios">
-            <div>
-                <input type="checkbox" id="boton" name="municipios">
-                <label for="municipios">Limites municipios</label>
-            </div>
-            <div>
-                <input type="checkbox" id="ufh" name="ufh">
-                <label for="ufh">UFH Aplicables</label>
-            </div>
-        </div>
-
+        
         <div id="viewDiv">
+
+            <div class="filtromunicipios">
+                <div>
+                    <input type="checkbox" id="boton" name="municipios">
+                    <label for="municipios">Limites municipios</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="ufh" name="ufh">
+                    <label for="ufh">UFH Aplicables</label>
+                </div>
+            </div>
+
+            
             <div class="escala_UAF">
                 <div class="uno_ufh">
                     1
