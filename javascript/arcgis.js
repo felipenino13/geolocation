@@ -75,13 +75,13 @@ require([
     
 
     // Define contenido del popup de los puntos generales del municipio
-    let x = "<img src=''><h2>{Municipio}</h2><p>{departamento}</p><hr><b>Rango del cálculo:</b> {rango_calculo_min} Ha- {rango_calculo_max} Ha<br><b>UFH encontradas:</b> {ufhEncontradas}<br><b>UFH líderes</b> {ufhLider}<br><hr><b>Líneas productivas:</b> {lineasProductivas}<br> <b>Líneas agrícolas:</b> {lineasAgricolas}<br><b>Líneas pecuarias:</b> {lineasPecuarias}<br><br><a class='button-line' href='{link_informe}'>Informe PDF</a><br>";
+    let x = "<h2>{Municipio}</h2><p>{departamento}</p><hr><b>Rango del cálculo:</b> {rango_calculo_min} Ha- {rango_calculo_max} Ha<br><b>UFH encontradas:</b> {ufhEncontradas}<br><b>UFH líderes</b> {ufhLider}<br><hr><b>Líneas productivas:</b> {lineasProductivas}<br> <b>Líneas agrícolas:</b> {lineasAgricolas}<br><b>Líneas pecuarias:</b> {lineasPecuarias}<br><hr><a class='button-line' href='{link_informe}'><img src='https://raw.githubusercontent.com/felipenino13/geolocation/45f210ff2a87fa9368ef0df7a440fe1228776be4/img/book.svg'> Informe PDF</a><br>";
     
 
     const popupPuntosMunicipios = {
       title: "Descripción",
       content: x,
-      
+      collapsed: true
     }
 
 
@@ -89,9 +89,9 @@ require([
       url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/municipios/FeatureServer/0",
       outFields: ["*"], // Consulta todos los atributos
       popupTemplate: popupPuntosMunicipios,   
-
     
     });
+
 
     map.add(puntosMunicipios);
 
@@ -328,7 +328,7 @@ require([
       } 
       
       else{
-        map.layers.removeAt(3);
+        map.layers.removeAt(2);
         document.getElementById("escala_colores").style.display = 'none';
       }
 
