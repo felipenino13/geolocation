@@ -27,12 +27,16 @@ hr{
     top: 70%;
     z-index: 1;
     left: 1%;
-    width: 15%;
+    width: 240px;
     font-size: 14px;
-    background: white;
-    box-shadow: rgb(75, 75, 75, 0.5) 1px 2px 4px;
-    padding: 4px;
+    padding: 16px;
 
+}
+
+.btn-check{
+    position: absolute;
+    clip: rect(0,0,0,0);
+    pointer-events: none;
 }
 
 h2{
@@ -162,7 +166,7 @@ h2{
         position: absolute;
         z-index: 1;
         height: 41px;
-        top: 8%;
+        top: 83%;
         left: 3%;
         display: flex;
         width: 94%;
@@ -171,13 +175,11 @@ h2{
 
     .filtromunicipios{
         position: fixed;
-        top: 80%;
+        top: 6%;
         z-index: 1;
         left: 3%;
-        width: 40%;
+        width: 100%;
         font-size: 12px;
-        background: white;
-        box-shadow: rgb(75, 75, 75, 0.5) 1px 2px 4px;
         padding: 4px;
     
     }

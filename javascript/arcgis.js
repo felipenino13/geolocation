@@ -248,7 +248,7 @@ require([
    
     
     
-    document.getElementById("boton").addEventListener("change", function hola() {
+    document.getElementById("boton").addEventListener("change", function() {
 
 
       // Municipios layer estilos graficos
