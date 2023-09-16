@@ -10,10 +10,12 @@ require([
     
     //search
     "esri/widgets/Search",
+    
+    "esri/layers/Layer"
 
   ], 
 
-  function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search) {
+  function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search, Layer) {
 
     //Config Key
     
@@ -110,25 +112,21 @@ require([
 
     
     // Define a pop-up for Trailheads
-    let x = "<h2>{Municipio}</h2><p>{departamento}</p><hr><b>UFH encontradas:</b> {ufhEncontradas}<br><b>UFH líder</b> {ufhLider}<br><hr><b>Líneas productivas:</b> {lineasProductivas}<br> <b>Líneas agrícolas:</b> {lineasAgricolas}<br><b>Líneas pecuarias:</b> {lineasPecuarias}<br><br><img src='{imagenes}'><br>";
+    let x = "<h2>{Municipio}</h2><p>{departamento}</p><hr><b>Rango del cálculo:</b> {rango_calculo_min} Ha- {rango_calculo_max} Ha<br><b>UFH encontradas:</b> {ufhEncontradas}<br><b>UFH líderes</b> {ufhLider}<br><hr><b>Líneas productivas:</b> {lineasProductivas}<br> <b>Líneas agrícolas:</b> {lineasAgricolas}<br><b>Líneas pecuarias:</b> {lineasPecuarias}<br><br><a class='button-line' href='{link_informe}'>Informe PDF</a><br>";
     
-    // Action descripción
-    const measureThisAction = {
-      title: "UFH Aplicables",
-      id: "measure-this",
-      image: "Measure_Distance16.png",
-    }
 
-    
 
     const popupTrailheads = {
       title: "Descripción",
       content: x,
       
-      //actions: [measureThisAction]
     }
 
+
     
+    
+
+
 
 
     const trailheads = new FeatureLayer({
@@ -250,7 +248,7 @@ require([
    
     
     
-    document.getElementById("boton").addEventListener("change", function() {
+    document.getElementById("boton").addEventListener("change", function hola() {
 
 
       // Municipios layer estilos graficos
@@ -277,7 +275,8 @@ require([
       } 
       
       else{
-        console.log("listo")
+        
+        console.log("listo");
         map.layers.removeAt(3)
       }
 
@@ -446,19 +445,26 @@ require([
       
       if(ufh.checked){
         map.add(ufhPradera);
+        document.getElementById("escala_colores").style.display = 'flex';
       } 
       
       else{
-        map.layers.removeAt(3)
+        map.layers.removeAt(3);
+        document.getElementById("escala_colores").style.display = 'none';
       }
 
       
+
+      
     });
+    
 
     
     
     
   }
+
+  
 
   
   

@@ -5,6 +5,7 @@ body,
     margin: 0;
     height: 100%;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .logo{
@@ -15,6 +16,10 @@ body,
     z-index: 1;
     bottom: 5%;
     left: 50%;
+}
+
+hr{
+    border: solid 1px rgb(241, 241, 241);
 }
 
 .filtromunicipios{
@@ -40,11 +45,16 @@ h2{
     position: absolute;
     z-index: 1;
     bottom: 10%;
-    left: 25%;
+    left: 20%;
     display: flex;
     width: 60%;
     font-size: 11px;
 }
+
+#escala_colores{
+    display: none;
+}
+
 
 /*UFH por color*/
 
@@ -171,6 +181,7 @@ h2{
         padding: 4px;
     
     }
+
 
     .logo{
         width: 40px;

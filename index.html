@@ -14,8 +14,15 @@
         <link rel="stylesheet" href="styles/styles.css">
         <!--Add modules-->
         <script src="javascript/arcgis.js"></script>
+
+        <!--Fuentes-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     
         <style>
+
+
             .esri-ui-corner{
                 height: 96vh;
                 justify-content: space-between;
@@ -28,6 +35,19 @@
             
             .esri-view-surface canvas{
                 z-index: -5;
+            }
+
+            .button-line{
+                padding: 4px;
+                border: solid 1px blue;
+                border-radius: 2px;
+                color: blue !important;
+            }
+
+            
+
+            a{
+                text-decoration: none !important;
             }
 
             /*Clases popup
@@ -104,7 +124,7 @@
             </div>
 
             
-            <div class="escala_UAF">
+            <div id="escala_colores" class="escala_UAF">
                 <div class="uno_ufh">
                     1
                 </div>
