@@ -194,6 +194,10 @@ require([
                 "color": [78, 75, 135, 0.5],
                 "style": "short-dot",
                 "label": "hola como estas",
+                outline: {
+                  color: [78, 75, 135, 0.5],
+                  width: 1 
+                }
               },
               label: "< 5%"
             },
@@ -205,6 +209,10 @@ require([
                 "width": "1.5px",
                 "color": [0, 166, 255, 0.5],
                 "style": "short-dot",
+                outline: {
+                  color: [0, 166, 255, 0.5],
+                  width: 1 
+                }
               },
               label: "< 5%"
             },
@@ -216,6 +224,10 @@ require([
                 "width": "1.5px",
                 "color": [45, 149, 192, 0.5],
                 "style": "short-dot",
+                outline: {
+                  color: [45, 149, 192, 0.5],
+                  width: 1 
+                }
               },
               label: "< 5%"
             },
@@ -227,6 +239,10 @@ require([
                 "width": "1.5px",
                 "color": [153, 193, 212, 0.5],
                 "style": "short-dot",
+                outline: {
+                  color: [153, 193, 212, 0.5],
+                  width: 1 
+                }
               },
               label: "< 5%"
             },
@@ -238,6 +254,10 @@ require([
                 "width": "1.5px",
                 "color": [53, 161, 75, 0.5],
                 "style": "short-dot",
+                outline: {
+                  color: [53, 161, 75, 0.5],
+                  width: 1 
+                }
               },
               label: "< 5%"
             },
@@ -249,9 +269,16 @@ require([
                 "width": "1.5px",
                 "color": [162, 193, 63, 0.5],
                 "style": "short-dot",
+                //agregar borde al fill
+                outline: {
+                  // Configuración del borde
+                  color: [162, 193, 63, 0.5], // Color del borde
+                  width: 1 // Ancho del borde
+                }
               },
-              label: "< 5%"
+              
             },
+            
             {
               minValue: 7,
               maxValue: 8,
@@ -260,6 +287,10 @@ require([
                 "width": "1.5px",
                 "color": [245, 229, 170, 0.5],
                 "style": "short-dot",
+                outline: {
+                  color: [245, 229, 170, 0.5],
+                  width: 1 
+                }
               },
               label: "< 5%"
             },
@@ -271,6 +302,10 @@ require([
                 "width": "1.5px",
                 "color": [250, 216, 91, 0.5],
                 "style": "short-dot",
+                outline: {
+                  color: [250, 216, 91, 0.5],
+                  width: 1 
+                }
               },
               label: "< 5%"
             },
@@ -282,6 +317,10 @@ require([
                 "width": "1.5px",
                 "color": [251, 129, 72, 0.5],
                 "style": "short-dot",
+                outline: {
+                  color: [251, 129, 72, 0.5],
+                  width: 1 
+                }
               },
               label: "< 5%"
             },
@@ -293,7 +332,10 @@ require([
                 "width": "1.5px",
                 "color": [251, 119, 169, 0.5],
                 "style": "short-dot",
-                
+                outline: {
+                  color: [251, 119, 169, 0.5],
+                  width: 1 
+                }
               },
               label: "< 5%"
             },
