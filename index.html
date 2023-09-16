@@ -23,6 +23,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+        <!--Calcite Design System icons-->
+        <script type="module" src="https://js.arcgis.com/calcite-components/1.8.0/calcite.esm.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/1.8.0/calcite.css" />
     
         <style>
 
@@ -53,60 +57,24 @@
                 padding: 4px 16px;
                 background: white;
                 border-radius: 2px;
-                color: black !important;
+                color: rgb(117, 117, 117) !important;
                 margin: 4px;
                 box-shadow: rgb(75, 75, 75, 0.5) 1px 2px 4px;
                 border-radius: 40px;
                 
+                
+            }
+            
+            /*iconos ui arcgis*/
+            calcite-icon{
+                vertical-align: middle;
+                padding-right: 4px;
             }
 
             a{
                 text-decoration: none !important;
             }
 
-            /*Clases popup
-            .esri-popup{
-                height: 100% !important;
-                inset: auto auto !important;
-                z-index: -1 !important;
-                padding-top: 80px;
-                background-color: white;
-                width: 20%;
-            }
-
-            .esri-view-height-large{
-                max-height: fit-content !important;
-            }
-
-            .esri-popup__content{
-                overflow: inherit !important;
-
-            }            
-
-            .esri-popup__main-container{
-                width: 100% !important;
-                max-height: auto !important;
-            }
-            */
-
-
-/*
-            .esri-popup__header-container--button{
-                display: none !important;
-            }
-*/  
-
-            /*
-            .esri-popup__button--dock{
-                display: none !important;
-            }
-
-            .esri-feature__content-node{
-                height: 70vh !important;
-            }
-
-            
-            */
             @media only screen and (max-width: 430px) {
 
                 .esri-search{
@@ -131,11 +99,17 @@
             <div class="filtromunicipios">
                 
                     <input class="btn-check" type="checkbox" id="boton">
-                    <label class="button-select" for="boton">Limites municipios</label>
+                    <label class="button-select" for="boton">
+                        <calcite-icon icon="grid-unit" text-label="Label for grid-unit"></calcite-icon>
+                        Limites municipios
+                    </label>
                 
                 
                     <input class="btn-check" type="checkbox" id="ufh">
-                    <label class="button-select" for="ufh">UFH Aplicables</label>
+                    <label class="button-select" for="ufh">
+                        <calcite-icon icon="image-layer" text-label="Label for image-layer"></calcite-icon>
+                        UFH Aplicables
+                    </label>
                 
             </div>
 
@@ -157,7 +131,7 @@
                     5
                 </div>
                 <div class="seis_ufh">
-                    6 Mediana
+                    6 
                 </div>
                 <div class="siete_ufh">
                     7 Regular
@@ -172,7 +146,7 @@
                     10 Mala
                 </div>
                 <div class="once_ufh">
-                    11 Muy mala
+                    11 
                 </div>
                 <div class="doce_ufh">
                     12

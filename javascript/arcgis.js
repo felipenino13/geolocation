@@ -8,14 +8,13 @@ require([
     "esri/layers/GraphicsLayer",
     "esri/layers/FeatureLayer",
     
-    //search
+    //add module search
     "esri/widgets/Search",
     
-    "esri/layers/Layer"
 
   ], 
 
-  function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search, Layer) {
+  function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,) {
 
     //Config Key
     
@@ -35,18 +34,11 @@ require([
 
     const view = new MapView({
       map: map,
+      // center Colombia
       center: [-74.635, 4.636], // Longitude, latitude
       zoom: 6, // Zoom level
       container: "viewDiv" // Div element
     });
-
-
-
-
-
-
-
-
 
 
     //add search widget
@@ -55,40 +47,11 @@ require([
     });
       
     view.ui.add(search, "top-left"); //Add to the map
-
-    //add graphy layer
-    const graphicsLayer = new GraphicsLayer();
-    map.add(graphicsLayer);
-
-    /*
-    //add point graphic
-    const point = { //Create a point
-      type: "point",
-      longitude: -74.0866213,
-      latitude: 4.6381991
-    };
- 
-    const simpleMarkerSymbol = {
-      type: "simple-marker",
-      color: [226, 119, 40],  // Orange
-      outline: {
-        color: [255, 255, 255], // White
-        width: 1
-      }
-    };
-
-    const pointGraphic = new Graphic({
-      geometry: point,
-      symbol: simpleMarkerSymbol
-    });
     
-    graphicsLayer.add(pointGraphic);
-
-    */  
-
     esriConfig.apiKey = "AAPK7f9d134b58a646b8bfa9a0f4bc14aed2xlxjmVtOfb4zfD_8_Y3Sj58hgYb-eeEgKAzQfJjcwLb1OyJKwlk01xxtdji_KZBw";
 
     /*
+    //estilos puntos de municipios
     const puntosRenderer = {
       type: "simple",
       symbol: {
@@ -96,157 +59,71 @@ require([
         color: "orange",
         width: "18px",
         height: "18px",
-        style: "solid"
+
       }
     }
     */
     
     //puntos de los municipios
-    const layer = new FeatureLayer({
+    const generalMunicipios = new FeatureLayer({
       url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/municipios/FeatureServer/0",
       //renderer: puntosRenderer,
-
     });
   
-    map.add(layer);
+    map.add(generalMunicipios);
 
     
-    // Define a pop-up for Trailheads
-    let x = "<h2>{Municipio}</h2><p>{departamento}</p><hr><b>Rango del cálculo:</b> {rango_calculo_min} Ha- {rango_calculo_max} Ha<br><b>UFH encontradas:</b> {ufhEncontradas}<br><b>UFH líderes</b> {ufhLider}<br><hr><b>Líneas productivas:</b> {lineasProductivas}<br> <b>Líneas agrícolas:</b> {lineasAgricolas}<br><b>Líneas pecuarias:</b> {lineasPecuarias}<br><br><a class='button-line' href='{link_informe}'>Informe PDF</a><br>";
+
+    // Define contenido del popup de los puntos generales del municipio
+    let x = "<img src=''><h2>{Municipio}</h2><p>{departamento}</p><hr><b>Rango del cálculo:</b> {rango_calculo_min} Ha- {rango_calculo_max} Ha<br><b>UFH encontradas:</b> {ufhEncontradas}<br><b>UFH líderes</b> {ufhLider}<br><hr><b>Líneas productivas:</b> {lineasProductivas}<br> <b>Líneas agrícolas:</b> {lineasAgricolas}<br><b>Líneas pecuarias:</b> {lineasPecuarias}<br><br><a class='button-line' href='{link_informe}'>Informe PDF</a><br>";
     
 
-
-    const popupTrailheads = {
+    const popupPuntosMunicipios = {
       title: "Descripción",
       content: x,
       
     }
 
 
-    
-    
-
-
-
-
-    const trailheads = new FeatureLayer({
+    const puntosMunicipios = new FeatureLayer({
       url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/municipios/FeatureServer/0",
       outFields: ["*"], // Consulta todos los atributos
-      popupTemplate: popupTrailheads,   
+      popupTemplate: popupPuntosMunicipios,   
 
     
     });
 
-    map.add(trailheads);
+    map.add(puntosMunicipios);
 
 
 
-    
-
-    /*
-
-    document.getElementsByClassName("btn").addEventListener("onclick", function() {
-      let y = "Hola mundo"
-      if(boton.checked){
-      console.log(y)
-      }
-      else{
-        console.log("adios")
-      }
-    });
-
-    */
-  
+     
     /*
     // Departamentos layer
-
-    // Municipios layer estilos graficos
+    // Deparamentos layer estilos graficos
 
     const departamentosRenderer = {
       "type": "simple",
       "symbol": {
       "type": "simple-line",
-      "width": "1.75px",
-      "color": "yellow",
+      "width": "1px",
+      "color": "green",
       "border-style": "dotted"
       
       }
     }
 
-    const featureLayer = new FeatureLayer({
+    const departamentos = new FeatureLayer({
       url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ufh/FeatureServer/0",
       //llama los estilos
       renderer: departamentosRenderer,
     });
   
-    map.add(featureLayer);
+    map.add(departamentos);
     */
 
-    const municipiosRenderer = {
-      "type": "simple",
-      "symbol": {
-        "type": "simple-line",
-        "width": "2px",
-        "color": "#65876B",
-        "style": "short-dot",
-      }
-    }
-
-    // Municipios layer
-    const featureLayer2 = new FeatureLayer({
-      url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/mgn2022_mpio_politico/FeatureServer/0",
-      //llama los estilos
-      renderer: municipiosRenderer,
-    });
-
-    /*
-
-    const checkbox = document.getElementById("boton");
-    const departamentoLayer = map.add(featureLayer2);
-
-    checkbox.addEventListener("change", function(){
-      if (checkbox.checked){
-        departamentoLayer.style.display= "block";
-      }
-      else {
-        departamentoLayer.style.display= "none"
-      }
-    });
-    */
     
-    /*
-    document.getElementById("boton").onclick = va;
-    function va(){
-
-
-      // Municipios layer estilos graficos
-
-      const municipiosRenderer = {
-        "type": "simple",
-        "symbol": {
-          "type": "simple-line",
-          "width": "1.5px",
-          "color": "#65876B",
-          "style": "short-dot",
-        }
-      }
-
-      // Municipios layer
-      const featureLayer2 = new FeatureLayer({
-        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/mgn2022_mpio_politico/FeatureServer/0",
-        //llama los estilos
-        renderer: municipiosRenderer,
-      });
-
-      map.add(featureLayer2);
-
-      console.log("hola mundo como estas")
-
-
-    }
-    */ 
-   
-    
+    //filtro de municipios
     
     document.getElementById("boton").addEventListener("change", function() {
 
@@ -277,12 +154,14 @@ require([
       else{
         
         console.log("listo");
-        map.layers.removeAt(3)
+        map.layers.removeAt(2)
       }
 
     });
+
+
     
-    //Capa de las ufh adjudicables de pradera
+    //filtro de las ufh adjudicables
 
     document.getElementById("ufh").addEventListener("change", function() {
 
@@ -422,8 +301,8 @@ require([
           ]
 
           
-      }  
-        
+      } 
+    
         
       
 
@@ -433,7 +312,7 @@ require([
         renderer: ufhRenderer,
         popupTemplate: {
           title:"{simb_final}",
-          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}"
+          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}",
         }
 
         
