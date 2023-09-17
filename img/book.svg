@@ -1,1 +1,11 @@
-<svg aria-hidden="true" class="svg" fill="currentColor" height="100%" viewBox="0 0 16 16" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M16 16V0H2v3H1v1h2V1h1v14H3v-1H2v2zM5 1h10v14H5zM1 7V6h1V5h1v2zm0 3V9h1V8h1v2zm0 3v-1h1v-1h1v2zm6-9h2v1H8v5h1v1H7zm4 0h2v7h-2v-1h1V5h-1z"></path></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.9.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#0D6EFD;}
+</style>
+<path class="st0" d="M1500,1080V0H555v202.5h-67.5V270h135V67.5H690v945h-67.5V945H555v135H1500z M757.5,67.5h675v945h-675V67.5z
+	 M487.5,472.5V405H555v-67.5h67.5v135H487.5z M487.5,675v-67.5H555V540h67.5v135H487.5z M487.5,877.5V810H555v-67.5h67.5v135H487.5z
+	 M892.5,270h135v67.5H960V675h67.5v67.5h-135V270z M1162.5,270h135v472.5h-135V675h67.5V337.5h-67.5V270z"/>
+</svg>
