@@ -360,16 +360,52 @@ require([
         
       });
 
+      /*UFH de Ayapel*/
+      const ufhAyapel = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ufhayapel/FeatureServer/0",
+        renderer: ufhRenderer,
+        popupTemplate: {
+          title:"{simb_final}",
+          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}",
+        }
+      });
+
+      /*UFH de Buesaco*/
+      const ufhBuesaco = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ufhbuesaco/FeatureServer/0",
+        renderer: ufhRenderer,
+        popupTemplate: {
+          title:"{simb_final}",
+          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}",
+        }
+      });
+
+      /*UFH de Planadas*/
+      const ufhPlanadas = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ufhplanadas/FeatureServer/0",
+        renderer: ufhRenderer,
+        popupTemplate: {
+          title:"{simb_final}",
+          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}",
+        }
+      });
+
       
     
 
       
       if(ufh.checked){
         map.add(ufhPradera);
+        map.add(ufhBuesaco);
+        map.add(ufhAyapel);
+        map.add(ufhPlanadas);
         document.getElementById("escala_colores").style.display = 'flex';
       } 
       
       else{
+        map.layers.removeAt(2);
+        map.layers.removeAt(2);
+        map.layers.removeAt(2);
         map.layers.removeAt(2);
         document.getElementById("escala_colores").style.display = 'none';
       }
@@ -379,16 +415,107 @@ require([
       
     });
     
+    /*options Query filtro
 
+    //SQL Query 
+    // SQL query array
+    //const parcelLayerSQL = ["Choose a SQL where clause...", "UseType = 'Residential'",  "UseType = 'Government'", "UseType = 'Irrigated Farm'", "TaxRateArea = 10853", "TaxRateArea = 10860", "TaxRateArea = 08637", "Roll_LandValue > 1000000", "Roll_LandValue < 1000000"];
+    const parcelLayerSQL = ["Choose a SQL where clause...", "clase_ufh = '06'",];
+    let whereClause = parcelLayerSQL[0];
     
     
-    
-  }
+     // Add SQL UI
+      const select = document.createElement("select");
+      select.setAttribute("class", "esri-widget esri-select");
+      select.setAttribute("style", "width: 200px; font-family: 'Avenir Next'; font-size: 1em");
+      parcelLayerSQL.forEach(function(query){
+        let option = document.createElement("option");
+        option.innerHTML = query;
+        option.value = query;
+        select.appendChild(option);
+      });
 
-  
+      view.ui.add(select, "top-right");
 
-  
-  
+      // Listen for changes
+      select.addEventListener('change', (event) => {
+        whereClause = event.target.value;
+
+        queryFeatureLayer(view.extent);
+
+      });
+
+      // Get query layer and set up query
+      const parcelLayer = new FeatureLayer({
+        //url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/LA_County_Parcels/FeatureServer/0",
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/shppraderaufhsaplicables/FeatureServer/0",
+      });
+
+      //Execute query
+      function queryFeatureLayer(extent) {
+
+        const parcelQuery = {
+         where: whereClause,  // Set by select element
+         spatialRelationship: "intersects", // Relationship operation to apply
+         geometry: extent, // Restricted to visible extent of the map
+         //outFields: ["APN","UseType","TaxRateCity","Roll_LandValue"], // Attributes to return
+         outFields: ["clase_ufh"], // Attributes to return
+         returnGeometry: true
+        };
+
+        //method to view the number of features
+
+        parcelLayer.queryFeatures(parcelQuery)
+
+        .then((results) => {
+
+          displayResults(results);
+
+        }).catch((error) => {
+          console.log(error.error);
+        });
+
+
+
+
+      }
+      
+      function displayResults(results) {
+        // Create a blue polygon
+        const symbol = {
+          type: "simple-fill",
+          color: [ 20, 130, 200, 0.5 ],
+          outline: {
+            color: "white",
+            width: .5
+          },
+        };
+
+        const popupTemplate = {
+          title: "Parcel {APN}",
+          content: "Type: {UseType} <br> Land value: {Roll_LandValue} <br> Tax Rate City: {TaxRateCity}"
+        };
+
+        // Assign styles and popup to features
+        results.features.map((feature) => {
+          feature.symbol = symbol;
+          feature.popupTemplate = popupTemplate;
+          return feature;
+        });
+
+        // Clear display
+        view.closePopup();
+        view.graphics.removeAll();
+        // Add features to graphics layer
+        view.graphics.addMany(results.features);
+
+
+      }
+    */
+
+
+
+  } 
 );
 
   
