@@ -27,6 +27,13 @@
         <!--Calcite Design System icons-->
         <script type="module" src="https://js.arcgis.com/calcite-components/1.8.0/calcite.esm.js"></script>
         <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/1.8.0/calcite.css" />
+
+        <!-- Etiquetas Open Graph para compartir en redes sociales -->
+        <meta property="og:title" content="Visor geografico de la UAF">
+        <meta property="og:description" content="Visor geografico con el calculo de la UAF de los municipios de Colombia">
+        <meta property="og:image" content="URL de la imagen en miniatura (1200x630px) que se mostrará">
+        <meta property="og:url" content="https://felipenino13.github.io/geolocation/">
+        <meta property="og:type" content="maps"> <!-- Opcional: article, video, music, etc. -->
     
         <style>
 
@@ -73,6 +80,10 @@
 
             .esri-search__form, .esri-search__input-container, .esri-search__container, .esri-widget--button, .esri-search__input{
                 background: none !important;
+            }
+
+            .esri-popup, .esri-popup__main-container{
+                border-radius: 8px;
             }
 
             
