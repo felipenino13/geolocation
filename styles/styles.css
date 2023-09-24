@@ -160,6 +160,14 @@ h2{
     border-radius: 4px;
 }
 
+.cardName{
+    background-size:cover; 
+    height:150px;
+    display: flex;
+    align-items: flex-end;
+    padding: 16px;
+
+}
 @media print {
     body{
         margin: 0;
