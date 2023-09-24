@@ -30,7 +30,6 @@
     
         <style>
 
-
             .esri-ui-corner{
                 height: 96vh;
                 justify-content: space-between;
@@ -44,7 +43,7 @@
             .esri-view-surface canvas{
                 z-index: -5;
             }
-
+            
             .button-line{
                 padding: 4px;
                 border: solid 1px #0d6efd;
@@ -72,8 +71,22 @@
                 
             }
 
+            .esri-search__form, .esri-search__input-container, .esri-search__container, .esri-widget--button, .esri-search__input{
+                background: none !important;
+            }
+
             
+            .esri-popup--is-docked-top-right, .esri-popup--is-docked-bottom-right{
+                justify-content: flex-start;
+                margin-top: 100px;
+            }
             
+            .esri-search{
+                height: 40px;
+                border-radius: 8px;
+            }
+            
+
             
             /*iconos ui arcgis*/
             calcite-icon{
@@ -88,7 +101,7 @@
             @media only screen and (max-width: 430px) {
 
                 .esri-search{
-                    width: 100% !important;
+                    width: 84% !important;
                 }
                 .esri-ui-corner{
                     width: 100% !important;
@@ -103,7 +116,55 @@
     
     </head>
     <body>
+
         
+        <nav id="menu" class="navbar fixed-top" style="top: 0.8%; right: 0; left: auto;">
+            <div class="container-fluid" style="width: auto; margin: 0;">
+              <button class="navbar-toggler bg-body-tertiary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="width: 20px;"></span>
+              </button>
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                  <img src="img/logo-completo-uaf.svg" width="150px">
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <hr>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <a class="nav-link" target="_blank" aria-current="page" href="https://www.ant.gov.co/servicio-al-ciudadano/unidad-agricola-familiar/"><calcite-icon icon="information" text-label="Label for image-layer"></calcite-icon>Que es la UAF</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" onclick="imprimir()"><calcite-icon icon="print" text-label="Label for image-layer"></calcite-icon>Imprimir</a>
+                    </li>
+                    <!--options links-->
+                    <!--
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                          <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  -->
+                    <!--Search-->
+                    <!--
+                  <form class="d-flex mt-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+                  -->
+                </div>
+              </div>
+            </div>
+          </nav>
         
         <div id="viewDiv">
 

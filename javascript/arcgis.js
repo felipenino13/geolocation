@@ -10,11 +10,13 @@ require([
     
     //add module search
     "esri/widgets/Search",
+    "esri/core/reactiveUtils"
+    
     
 
   ], 
 
-  function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,) {
+  function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search, reactiveUtils) {
 
     //Config Key
     
@@ -24,6 +26,7 @@ require([
     //Create a map
     const map = new Map({
       basemap: "arcgis-topographic", // Basemap layer service
+      //basemap: "arcgis-dark-gray",
       //basemap: "arcgis-navigation" //navigation
     });
 
@@ -77,13 +80,37 @@ require([
     // Define contenido del popup de los puntos generales del municipio
     let x = "<h2>{Municipio}</h2><p>{departamento}</p><hr><b>Rango del cálculo:</b> {rango_calculo_min} Ha- {rango_calculo_max} Ha<br><b>UFH encontradas:</b> {ufhEncontradas}<br><b>UFH líderes</b> {ufhLider}<br><hr><b>Líneas productivas:</b> {lineasProductivas}<br> <b>Líneas agrícolas:</b> {lineasAgricolas}<br><b>Líneas pecuarias:</b> {lineasPecuarias}<br><hr><a class='button-line' href='{link_informe}'><img src='https://raw.githubusercontent.com/felipenino13/geolocation/main/img/book.svg'> Informe PDF</a><br>";
     
+    //PRUEBA ACTION
+    //PRUEBA DEFINE EL BOTON EN EL ARREGLO
+    const primerAction = {
+      title:"Esto es un boton",
+      id:"camara",
+    };
 
     const popupPuntosMunicipios = {
       title: "Descripción",
       content: x,
-      collapsed: true
+      collapsed: true, 
+      //Esto agrega una acción al popup
+      //actions: [primerAction]
+    };
+    /*
+    //PRUEBA DEFINE LA FUNCION DEL ID
+    function camaraAcccion(){
+      console.log("toda accion conlleva una reacción")
     }
 
+    //EVENT PARA DISPARA LA ACCION
+    // Event handler that fires each time an action is clicked.
+    reactiveUtils.on(
+      () => view.popup,
+      "trigger-action",
+      (event) => {  // Execute the measureThis() function if the measure-this action is clicked
+        if (event.action.id === "camara") {
+          camaraAcccion();
+        }
+    });
+    */
 
     const puntosMunicipios = new FeatureLayer({
       url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/municipios/FeatureServer/0",
@@ -184,7 +211,8 @@ require([
           },
         },
         defaultLabel: "no data",
-          classBreakInfos: [
+          classBreakInfos: [            
+
             {
               minValue: 1,
               maxValue: 2,
@@ -519,4 +547,10 @@ require([
 );
 
   
-
+function imprimir(){
+  document.getElementById("offcanvasNavbar").classList.remove("show");
+  document.querySelector(".offcanvas-backdrop.fade.show").classList.remove("show")
+  window.print();
+  
+  //window.print();
+}

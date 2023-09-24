@@ -155,10 +155,23 @@ h2{
 
 /*botones popup*/
 .btn{
-    background: red;
+    
     padding: 4px;
     border-radius: 4px;
 }
+
+@media print {
+    body{
+        margin: 0;
+        width: 100%;
+        transform: scale(1);
+    }
+    /* Estilos de impresión personalizados */
+    .esri-search, .navbar-toggler, .filtromunicipios, .esri-zoom {
+      display: none; /* Oculta elementos con la clase 'no-print' */
+    }
+
+  }
 
 @media only screen and (max-width: 600px) {
 
