@@ -280,10 +280,10 @@ require([
               symbol: {
                 "type": "simple-fill",
                 "width": "1.5px",
-                "color": [53, 161, 75, 0.5],
+                "color": [26, 107, 66, 0.5],
                 "style": "short-dot",
                 outline: {
-                  color: [53, 161, 75, 0.5],
+                  color: [26, 107, 66, 0.5],
                   width: 1 
                 }
               },
@@ -373,7 +373,8 @@ require([
           
       } 
     
-        
+      
+      
       
 
       /*UFH de Pradera*/
@@ -381,11 +382,10 @@ require([
         url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/shppraderaufhsaplicables/FeatureServer/0",
         renderer: ufhRenderer,
         popupTemplate: {
-          title:"{simb_final}",
+          title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
           content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}",
         }
-
-        
+  
       });
 
       /*UFH de Ayapel*/
@@ -393,7 +393,7 @@ require([
         url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ufhayapel/FeatureServer/0",
         renderer: ufhRenderer,
         popupTemplate: {
-          title:"{simb_final}",
+          title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
           content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}",
         }
       });
@@ -403,7 +403,7 @@ require([
         url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ufhbuesaco/FeatureServer/0",
         renderer: ufhRenderer,
         popupTemplate: {
-          title:"{simb_final}",
+          title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
           content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}",
         }
       });
@@ -413,7 +413,7 @@ require([
         url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ufhplanadas/FeatureServer/0",
         renderer: ufhRenderer,
         popupTemplate: {
-          title:"{simb_final}",
+          title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
           content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}",
         }
       });

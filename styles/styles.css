@@ -168,6 +168,83 @@ h2{
     padding: 16px;
 
 }
+
+/*Clases ufh*/
+.ufh01{
+    background: #4E4B87;
+    font-size: 14px;
+    padding: 1px 4px;
+    color: white;
+}
+.ufh02{
+    background: #0C6097;
+    font-size: 14px;
+    padding: 1px 4px;
+    color: white;
+}
+.ufh03{
+    background: #2D95C0;
+    font-size: 14px;
+    padding: 1px 4px;
+    color: white;
+}
+.ufh04{
+    background: #99C1D4;
+    font-size: 14px;
+    padding: 1px 4px;
+}
+.ufh05{
+    background: #1A6B42;
+    font-size: 14px;
+    padding: 1px 4px;
+    color: white;
+}
+.ufh06{
+    background: #5CAA84;
+    font-size: 14px;
+    padding: 1px 4px;
+    color: white;
+}
+.ufh07{
+    background: #ADBA3E;
+    font-size: 14px;
+    padding: 1px 4px;
+}
+.ufh08{
+    background: #F6E5A9;
+    font-size: 14px;
+    padding: 1px 4px;
+}
+.ufh09{
+    background: #F1D674;
+    font-size: 14px;
+    padding: 1px 4px;
+}
+.ufh10{
+    background: #FB8148;
+    font-size: 14px;
+    padding: 1px 4px;
+    color: white;
+}
+.ufh11{
+    background: #FB77A9;
+    font-size: 14px;
+    padding: 1px 4px;
+    color: white;
+}
+.ufh12{
+    background: #8B4841;
+    font-size: 14px;
+    padding: 1px 4px;
+    color: white;
+}
+.ufh13{
+    background: #57524F;
+    font-size: 14px;
+    padding: 1px 4px;
+    color: white;
+}
+
 @media print {
     body{
         margin: 0;
@@ -186,7 +263,7 @@ h2{
     .escala_UAF{
         position: absolute;
         z-index: 1;
-        height: 41px;
+        height: 20px;
         top: 83%;
         left: 3%;
         display: flex;
