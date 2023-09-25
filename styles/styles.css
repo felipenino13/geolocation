@@ -166,7 +166,22 @@ h2{
     display: flex;
     align-items: flex-end;
     padding: 16px;
+    position: relative;
 
+}
+
+.degrade{
+    background-image: linear-gradient(180deg, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.5));
+    height: 120px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.tituloPopup{
+    z-index: 1;
 }
 
 /*Clases ufh*/
@@ -244,6 +259,8 @@ h2{
     padding: 1px 4px;
     color: white;
 }
+
+
 
 @media print {
     body{
