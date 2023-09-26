@@ -24,8 +24,6 @@ body,
     z-index: -5;
 }
 
-
-
 .button-line{
     padding: 4px;
     border: solid 1px #0d6efd;
@@ -36,6 +34,8 @@ body,
     display: inline-flex;
 }
 
+
+
 .button-line img{
     vertical-align: middle;
     padding-right: 4px;
@@ -44,9 +44,9 @@ body,
 
 .button-select{
     padding: 4px 16px;
-    background: white;
+    background: #2b3035;
     border-radius: 2px;
-    color: rgb(117, 117, 117) !important;
+    color: white !important;
     margin: 4px;
     box-shadow: rgb(75, 75, 75, 0.5) 1px 2px 4px;
     border-radius: 40px;
@@ -123,8 +123,6 @@ hr{
     padding: 16px;
 
 }
-
-
 
 .btn-check{
     position: absolute;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es" data-bs-theme="auto" id="colorTheme">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
@@ -11,11 +11,11 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
         <!--Reference de API-->
-        <link rel="stylesheet" href="https://js.arcgis.com/4.27/esri/themes/light/main.css">
+        <link id="estilos" rel="stylesheet" href="https://js.arcgis.com/4.27/esri/themes/light/main.css">
         <script src="https://js.arcgis.com/4.27/"></script>
 
         <!--Estilos arcgis-->
-        <link rel="stylesheet" href="styles/styles.css">
+        <link id="estilosloc" rel="stylesheet" href="styles/styles.css">
         <!--Add modules-->
         <script src="javascript/arcgis.js"></script>
 
@@ -37,89 +37,7 @@
     
         <style>
 
-            .esri-ui-corner{
-                height: 96vh;
-                justify-content: space-between;
-                flex-direction: column-reverse !important;
-            }
-
-            .esri-ui {
-                z-index: 2 !important;
-            }
             
-            .esri-view-surface canvas{
-                z-index: -5;
-            }
-            
-            .button-line{
-                padding: 4px;
-                border: solid 1px #0d6efd;
-                border-radius: 4px;
-                color: #0d6efd !important;
-                margin: 4px;
-                font-size: 14px;
-            }
-
-            .button-line img{
-                vertical-align: middle;
-                padding-right: 4px;
-                width: 20px;
-            }
-
-            .button-select{
-                padding: 4px 16px;
-                background: white;
-                border-radius: 2px;
-                color: rgb(117, 117, 117) !important;
-                margin: 4px;
-                box-shadow: rgb(75, 75, 75, 0.5) 1px 2px 4px;
-                border-radius: 40px;
-                
-                
-            }
-
-            .esri-search__form, .esri-search__input-container, .esri-search__container, .esri-widget--button, .esri-search__input{
-                background: none !important;
-            }
-
-            .esri-popup, .esri-popup__main-container{
-                border-radius: 8px;
-            }
-
-            
-            .esri-popup--is-docked-top-right, .esri-popup--is-docked-bottom-right{
-                justify-content: flex-start;
-                margin-top: 100px;
-            }
-            
-            .esri-search{
-                height: 40px;
-                border-radius: 8px;
-            }
-            
-
-            
-            /*iconos ui arcgis*/
-            calcite-icon{
-                vertical-align: middle;
-                padding-right: 4px;
-            }
-
-            a{
-                text-decoration: none !important;
-            }
-
-            @media only screen and (max-width: 430px) {
-
-                .esri-search{
-                    width: 84% !important;
-                }
-                .esri-ui-corner{
-                    width: 100% !important;
-                }
-
-
-            }
             
   
         </style>
@@ -127,7 +45,6 @@
     
     </head>
     <body>
-
         
         <nav id="menu" class="navbar fixed-top" style="top: 0.8%; right: 0; left: auto;">
             <div class="container-fluid" style="width: auto; margin: 0;">
@@ -139,14 +56,20 @@
                   <img src="img/logo-completo-uaf.svg" width="150px">
                   <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-                <hr>
                 <div class="offcanvas-body">
                   <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <hr>
                     <li class="nav-item">
                       <a class="nav-link" target="_blank" aria-current="page" href="https://www.ant.gov.co/servicio-al-ciudadano/unidad-agricola-familiar/"><calcite-icon icon="information" text-label="Label for image-layer"></calcite-icon>Que es la UAF</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" onclick="imprimir()"><calcite-icon icon="print" text-label="Label for image-layer"></calcite-icon>Imprimir</a>
+                    </li>
+                    <hr>
+                    <li class="nav item">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="cambiarBasemap" role="switch"><label for="cambiarBasemap" class="form-check-label" >Aspecto</label>
+                        </div>
                     </li>
                     <!--options links-->
                     <!--
@@ -179,9 +102,9 @@
         
         <div id="viewDiv">
 
-            <div class="filtromunicipios">
+            <div class="filtromunicipios" >
                 
-                    <input class="btn-check" type="checkbox" id="boton">
+                    <input class="btn-check" type="checkbox" id="boton" >
                     <label class="button-select" for="boton">
                         <calcite-icon icon="grid-unit" text-label="Label for grid-unit"></calcite-icon>
                         Limites municipios

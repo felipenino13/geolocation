@@ -10,7 +10,9 @@ require([
     
     //add module search
     "esri/widgets/Search",
-    "esri/core/reactiveUtils"
+    "esri/core/reactiveUtils",
+    
+    
     
     
 
@@ -24,13 +26,13 @@ require([
     
 
     //Create a map
-    const map = new Map({
+    let map = new Map({
       basemap: "arcgis-topographic", // Basemap layer service
       //basemap: "arcgis-dark-gray",
       //basemap: "arcgis-navigation" //navigation
     });
 
-
+    
 
 
     //Create a mapview
@@ -442,6 +444,8 @@ require([
 
       
     });
+
+    
     
     /*options Query filtro
 
@@ -541,8 +545,29 @@ require([
       }
     */
 
-
-
+      document.getElementById("cambiarBasemap").addEventListener("change", function() {
+        let estiloGeneral = document.getElementById("estilos");
+        let enlacedark = "https://js.arcgis.com/4.27/esri/themes/dark/main.css";
+        let enlacelight = "https://js.arcgis.com/4.27/esri/themes/light/main.css";
+        
+        
+        
+        if(cambiarBasemap.checked){
+          estiloGeneral.href = enlacedark;  
+          map.basemap = "arcgis-dark-gray";  
+          document.getElementById("colorTheme").setAttribute("data-bs-theme", "dark");
+          document.getElementById("estilosloc").href = "styles/stylesdark.css";
+        } 
+        else{
+          estiloGeneral.href = enlacelight;
+          map.basemap = "arcgis-topographic"; 
+          document.getElementById("colorTheme").setAttribute("data-bs-theme", "light");
+          document.getElementById("estilosloc").href = "styles/styles.css";
+        }
+        
+        
+      })
+      
   } 
 );
 
@@ -554,3 +579,7 @@ function imprimir(){
   
   //window.print();
 }
+
+
+
+
