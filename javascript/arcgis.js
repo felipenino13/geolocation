@@ -258,7 +258,7 @@ require([
     const primerAction = {
       title:"UFH Municipio",
       id:"camara",
-      image: "<calcite-icon icon='polygon-area' text-label='Label for polygon-area'></calcite-icon>"
+      image: "https://raw.githubusercontent.com/felipenino13/geolocation/main/img/polygon.svg"
     };
 
 
