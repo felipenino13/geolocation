@@ -68,6 +68,177 @@ require([
       }
     }
     */
+
+
+    /*renderer capa de colores estilos ufh*/
+    const ufhRenderer = {
+      type: "class-breaks",
+      field: "clase_ufh",
+      normalizationField: "EDUCBASECY",
+      legendOptions: {
+        title: "% of adults with no high school education"
+      },
+      defaultSymbol: {
+        type: "simple-fill",
+        color: [255, 255, 255, 0.5],
+        //style: "backward-diagonal",
+        outline: {
+          width: 0.5,
+          color: [50, 50, 50, 0.5]
+        },
+      },
+      defaultLabel: "no data",
+        classBreakInfos: [            
+
+          {
+            minValue: 1,
+            maxValue: 2,
+            symbol: {
+              "type": "simple-fill",
+              "width": "1.5px",
+              "color": [78, 75, 135, 0.5],
+              "label": "hola como estas",
+              outline: {
+                color: [78, 75, 135, 0.5],
+                width: 1 
+              }
+            },
+            label: "< 5%"
+          },
+          {
+            minValue: 2,
+            maxValue: 3,
+            symbol: {
+              "type": "simple-fill",
+              "width": "1.5px",
+              "color": [0, 166, 255, 0.5],
+              outline: {
+                color: [0, 166, 255, 0.5],
+                width: 1 
+              }
+            },
+            label: "< 5%"
+          },
+          {
+            minValue: 3,
+            maxValue: 4,
+            symbol: {
+              "type": "simple-fill",
+              "width": "1.5px",
+              "color": [45, 149, 192, 0.5],
+              outline: {
+                color: [45, 149, 192, 0.5],
+                width: 1 
+              }
+            },
+            label: "< 5%"
+          },
+          {
+            minValue: 4,
+            maxValue: 5,
+            symbol: {
+              "type": "simple-fill",
+              "width": "1.5px",
+              "color": [153, 193, 212, 0.5],
+              outline: {
+                color: [153, 193, 212, 0.5],
+                width: 1 
+              }
+            },
+            label: "< 5%"
+          },
+          {
+            minValue: 5,
+            maxValue: 6,
+            symbol: {
+              "type": "simple-fill",
+              "width": "1.5px",
+              "color": [26, 107, 66, 0.5],
+              outline: {
+                color: [26, 107, 66, 0.5],
+                width: 1 
+              }
+            },
+            label: "< 5%"
+          },
+          {
+            minValue: 6,
+            maxValue: 7,
+            symbol: {
+              "type": "simple-fill",
+              "width": "1.5px",
+              "color": [162, 193, 63, 0.5],
+              //agregar borde al fill
+              outline: {
+                // Configuración del borde
+                color: [162, 193, 63, 0.5], // Color del borde
+                width: 1 // Ancho del borde
+              }
+            },
+            
+          },
+          
+          {
+            minValue: 7,
+            maxValue: 8,
+            symbol: {
+              "type": "simple-fill",
+              "width": "1.5px",
+              "color": [245, 229, 170, 0.5],
+              outline: {
+                color: [245, 229, 170, 0.5],
+                width: 1 
+              }
+            },
+            label: "< 5%"
+          },
+          {
+            minValue: 8,
+            maxValue: 9,
+            symbol: {
+              "type": "simple-fill",
+              "width": "1.5px",
+              "color": [250, 216, 91, 0.5],
+              outline: {
+                color: [250, 216, 91, 0.5],
+                width: 1 
+              }
+            },
+            label: "< 5%"
+          },
+          {
+            minValue: 9,
+            maxValue: 10,
+            symbol: {
+              "type": "simple-fill",
+              "width": "1.5px",
+              "color": [251, 129, 72, 0.5],
+              outline: {
+                color: [251, 129, 72, 0.5],
+                width: 1 
+              }
+            },
+            label: "< 5%"
+          },
+          {
+            minValue: 10,
+            maxValue: 11,
+            symbol: {
+              "type": "simple-fill",
+              "width": "1.5px",
+              "color": [251, 119, 169, 0.5],
+              outline: {
+                color: [251, 119, 169, 0.5],
+                width: 1 
+              }
+            },
+            label: "< 5%"
+          },
+          
+        ]
+
+        
+    } 
     
     //puntos de los municipios
     const generalMunicipios = new FeatureLayer({
@@ -80,39 +251,79 @@ require([
     
 
     // Define contenido del popup de los puntos generales del municipio
-    let x = "<div class='cardName' style='background-image:url({imagenes});'><div class='degrade'></div><div class='tituloPopup'><h2 style='color:white'>{Municipio}</h2><p style='color:white'>{departamento}</p></div></div><hr><b>Rango del cálculo:</b> {rango_calculo_min} Ha- {rango_calculo_max} Ha<br><b>UFH encontradas:</b> {ufhEncontradas}<br><b>UFH líderes</b> {ufhLider}<br><hr><b>Líneas productivas:</b> {lineasProductivas}<br> <b>Líneas agrícolas:</b> {lineasAgricolas}<br><b>Líneas pecuarias:</b> {lineasPecuarias}<br><hr><a class='button-line' href='{link_informe}'><img src='https://raw.githubusercontent.com/felipenino13/geolocation/main/img/book.svg'> Informe PDF</a><br>";
-    
+    let x = "<div class='cardName' style='background-image:url({imagenes});'><div class='degrade'></div><div class='tituloPopup'><h2 style='color:white'>{Municipio}</h2><p style='color:white'>{departamento}</p></div></div><hr><b>Rango del cálculo:</b> {rango_calculo_min} Ha- {rango_calculo_max} Ha<br><b>UFH encontradas:</b> {ufhEncontradas}<br><b>UFH líderes</b> {ufhLider}<br><hr><b>Líneas productivas:</b> {lineasProductivas}<br> <b>Líneas agrícolas:</b> {lineasAgricolas}<br><b>Líneas pecuarias:</b> {lineasPecuarias}<br><hr><a class='button-line' href='{link_informe}'><img src='https://raw.githubusercontent.com/felipenino13/geolocation/main/img/book.svg'> Informe PDF</a><br><div style='display:none' class='mapacero'>{capashp}</div>";
+    let y = "<div style='display:none' class='mapacero'>{capashp}</div>";
     //PRUEBA ACTION
     //PRUEBA DEFINE EL BOTON EN EL ARREGLO
     const primerAction = {
-      title:"Esto es un boton",
+      title:"UFH Municipio",
       id:"camara",
+      image: "<calcite-icon icon='polygon-area' text-label='Label for polygon-area'></calcite-icon>"
     };
 
+
     const popupPuntosMunicipios = {
-      title: "Descripción",
+      title: "Descripción", 
       content: x,
+      //content: y,
       collapsed: true, 
       //Esto agrega una acción al popup
-      //actions: [primerAction]
+      actions: [primerAction], 
     };
-    /*
+    
     //PRUEBA DEFINE LA FUNCION DEL ID
+    //function camaraAcccion(){
+      //console.log("toda accion conlleva una reacción")
+    //}
+
     function camaraAcccion(){
-      console.log("toda accion conlleva una reacción")
-    }
+      
+      var elementoMapacero = document.querySelector(".mapacero");
+      
+      if (elementoMapacero) {
+        var contenidoTexto = elementoMapacero.textContent;
+        //console.log(contenidoTexto);
+      } else {
+        //console.log("No se encontró ningún elemento con la clase 'mapacero'.");
+      }
+      
+      
+      const ufhMun = new FeatureLayer({
+        url: contenidoTexto,       
+        renderer: ufhRenderer,
+        popupTemplate: {
+          title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
+          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>Líneas agricolas: {lineaAgricola}<br>Líneas pecuarias: {lineaPecuarias}",
+        }
+      });
+      map.add(ufhMun);
+      
+
+     };
+
+     let camaraActivada = false;
 
     //EVENT PARA DISPARA LA ACCION
     // Event handler that fires each time an action is clicked.
     reactiveUtils.on(
       () => view.popup,
       "trigger-action",
-      (event) => {  // Execute the measureThis() function if the measure-this action is clicked
+      (event,) => {  // Execute the measureThis() function if the measure-this action is clicked
         if (event.action.id === "camara") {
-          camaraAcccion();
+          
+          if(camaraActivada) {
+            map.layers.removeAt(2);
+            document.getElementById("escala_colores").style.display = 'none';
+          }
+          else {
+            camaraAcccion();
+            document.getElementById("escala_colores").style.display = 'flex';
+            
+          }
+          camaraActivada = !camaraActivada;
         }
     });
-    */
+    
 
     const puntosMunicipios = new FeatureLayer({
       url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/municipios/FeatureServer/0",
@@ -195,185 +406,7 @@ require([
     document.getElementById("ufh").addEventListener("change", function() {
 
 
-      /*renderer capa*/
-      const ufhRenderer = {
-        type: "class-breaks",
-        field: "clase_ufh",
-        normalizationField: "EDUCBASECY",
-        legendOptions: {
-          title: "% of adults with no high school education"
-        },
-        defaultSymbol: {
-          type: "simple-fill",
-          color: [255, 255, 255, 0.5],
-          //style: "backward-diagonal",
-          outline: {
-            width: 0.5,
-            color: [50, 50, 50, 0.5]
-          },
-        },
-        defaultLabel: "no data",
-          classBreakInfos: [            
-
-            {
-              minValue: 1,
-              maxValue: 2,
-              symbol: {
-                "type": "simple-fill",
-                "width": "1.5px",
-                "color": [78, 75, 135, 0.5],
-                "style": "short-dot",
-                "label": "hola como estas",
-                outline: {
-                  color: [78, 75, 135, 0.5],
-                  width: 1 
-                }
-              },
-              label: "< 5%"
-            },
-            {
-              minValue: 2,
-              maxValue: 3,
-              symbol: {
-                "type": "simple-fill",
-                "width": "1.5px",
-                "color": [0, 166, 255, 0.5],
-                "style": "short-dot",
-                outline: {
-                  color: [0, 166, 255, 0.5],
-                  width: 1 
-                }
-              },
-              label: "< 5%"
-            },
-            {
-              minValue: 3,
-              maxValue: 4,
-              symbol: {
-                "type": "simple-fill",
-                "width": "1.5px",
-                "color": [45, 149, 192, 0.5],
-                "style": "short-dot",
-                outline: {
-                  color: [45, 149, 192, 0.5],
-                  width: 1 
-                }
-              },
-              label: "< 5%"
-            },
-            {
-              minValue: 4,
-              maxValue: 5,
-              symbol: {
-                "type": "simple-fill",
-                "width": "1.5px",
-                "color": [153, 193, 212, 0.5],
-                "style": "short-dot",
-                outline: {
-                  color: [153, 193, 212, 0.5],
-                  width: 1 
-                }
-              },
-              label: "< 5%"
-            },
-            {
-              minValue: 5,
-              maxValue: 6,
-              symbol: {
-                "type": "simple-fill",
-                "width": "1.5px",
-                "color": [26, 107, 66, 0.5],
-                "style": "short-dot",
-                outline: {
-                  color: [26, 107, 66, 0.5],
-                  width: 1 
-                }
-              },
-              label: "< 5%"
-            },
-            {
-              minValue: 6,
-              maxValue: 7,
-              symbol: {
-                "type": "simple-fill",
-                "width": "1.5px",
-                "color": [162, 193, 63, 0.5],
-                "style": "short-dot",
-                //agregar borde al fill
-                outline: {
-                  // Configuración del borde
-                  color: [162, 193, 63, 0.5], // Color del borde
-                  width: 1 // Ancho del borde
-                }
-              },
-              
-            },
-            
-            {
-              minValue: 7,
-              maxValue: 8,
-              symbol: {
-                "type": "simple-fill",
-                "width": "1.5px",
-                "color": [245, 229, 170, 0.5],
-                "style": "short-dot",
-                outline: {
-                  color: [245, 229, 170, 0.5],
-                  width: 1 
-                }
-              },
-              label: "< 5%"
-            },
-            {
-              minValue: 8,
-              maxValue: 9,
-              symbol: {
-                "type": "simple-fill",
-                "width": "1.5px",
-                "color": [250, 216, 91, 0.5],
-                "style": "short-dot",
-                outline: {
-                  color: [250, 216, 91, 0.5],
-                  width: 1 
-                }
-              },
-              label: "< 5%"
-            },
-            {
-              minValue: 9,
-              maxValue: 10,
-              symbol: {
-                "type": "simple-fill",
-                "width": "1.5px",
-                "color": [251, 129, 72, 0.5],
-                "style": "short-dot",
-                outline: {
-                  color: [251, 129, 72, 0.5],
-                  width: 1 
-                }
-              },
-              label: "< 5%"
-            },
-            {
-              minValue: 10,
-              maxValue: 11,
-              symbol: {
-                "type": "simple-fill",
-                "width": "1.5px",
-                "color": [251, 119, 169, 0.5],
-                "style": "short-dot",
-                outline: {
-                  color: [251, 119, 169, 0.5],
-                  width: 1 
-                }
-              },
-              label: "< 5%"
-            },
-            
-          ]
-
-          
-      } 
+      
     
       
       
@@ -385,7 +418,7 @@ require([
         renderer: ufhRenderer,
         popupTemplate: {
           title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
-          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}",
+          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>Líneas agricolas: {lineaAgricola}<br>Líneas pecuarias: {lineaPecuarias}",
         }
   
       });
@@ -396,7 +429,7 @@ require([
         renderer: ufhRenderer,
         popupTemplate: {
           title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
-          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}",
+          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>Líneas agricolas: {lineaAgricola}<br>Líneas pecuarias: {lineaPecuarias}",
         }
       });
 
@@ -406,7 +439,7 @@ require([
         renderer: ufhRenderer,
         popupTemplate: {
           title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
-          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}",
+          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>Líneas agricolas: {lineaAgricola}<br>Líneas pecuarias: {lineaPecuarias}",
         }
       });
 
@@ -416,7 +449,7 @@ require([
         renderer: ufhRenderer,
         popupTemplate: {
           title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
-          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}",
+          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>Líneas agricolas: {lineaAgricola}<br>Líneas pecuarias: {lineaPecuarias}",
         }
       });
 
@@ -425,6 +458,7 @@ require([
 
       
       if(ufh.checked){
+        map.layers.removeAt(2);
         map.add(ufhPradera);
         map.add(ufhBuesaco);
         map.add(ufhAyapel);
