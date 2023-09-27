@@ -293,7 +293,7 @@ require([
         renderer: ufhRenderer,
         popupTemplate: {
           title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
-          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>Líneas agricolas: {lineaAgricola}<br>Líneas pecuarias: {lineaPecuarias}",
+          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>Líneas agricolas: {lineaAgricola}<br><p style='display:inline-block !important;margin-bottom:16px'>Líneas pecuarias: {lineaPecuarias}</p>",
         }
       });
       map.add(ufhMun);
@@ -376,7 +376,7 @@ require([
           "type": "simple-line",
           "width": "1.5px",
           "color": "#65876B",
-          "style": "short-dot",
+          "style": "simple-fill",
         }
       }
 
@@ -418,7 +418,7 @@ require([
         renderer: ufhRenderer,
         popupTemplate: {
           title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
-          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>Líneas agricolas: {lineaAgricola}<br>Líneas pecuarias: {lineaPecuarias}",
+          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>Líneas agricolas: {lineaAgricola}<br><p style='display:inline-block !important;margin-bottom:16px'>Líneas pecuarias: {lineaPecuarias}</p>",
         }
   
       });
@@ -429,7 +429,7 @@ require([
         renderer: ufhRenderer,
         popupTemplate: {
           title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
-          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>Líneas agricolas: {lineaAgricola}<br>Líneas pecuarias: {lineaPecuarias}",
+          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>Líneas agricolas: {lineaAgricola}<br><p style='display:inline-block !important;margin-bottom:16px'>Líneas pecuarias: {lineaPecuarias}</p>",
         }
       });
 
@@ -439,7 +439,7 @@ require([
         renderer: ufhRenderer,
         popupTemplate: {
           title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
-          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>Líneas agricolas: {lineaAgricola}<br>Líneas pecuarias: {lineaPecuarias}",
+          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>Líneas agricolas: {lineaAgricola}<br><p style='display:inline-block !important;margin-bottom:16px'>Líneas pecuarias: {lineaPecuarias}</p>",
         }
       });
 
@@ -449,7 +449,7 @@ require([
         renderer: ufhRenderer,
         popupTemplate: {
           title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
-          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>Líneas agricolas: {lineaAgricola}<br>Líneas pecuarias: {lineaPecuarias}",
+          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>Líneas agricolas: {lineaAgricola}<br><p style='display:inline-block !important;margin-bottom:16px'>Líneas pecuarias: {lineaPecuarias}</p>",
         }
       });
 
@@ -458,7 +458,7 @@ require([
 
       
       if(ufh.checked){
-        map.layers.removeAt(2);
+
         map.add(ufhPradera);
         map.add(ufhBuesaco);
         map.add(ufhAyapel);
