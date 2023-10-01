@@ -39,12 +39,18 @@ require([
 
    
     
-    let view = new MapView({
+    //Create scene 3D
+    let view = new SceneView({
+      container: "viewDiv",
       map: map,
-      // center Colombia
-      center: [-74.635, 4.636], // Longitude, latitude
-      zoom: 6, // Zoom level
-      container: "viewDiv" // Div element
+      camera: {
+        position: {
+          x: -74.081, //Longitude
+          y: 4.636, //Latitude
+          z: 200000 //Meters
+        },
+        tilt: 75
+      }
     });
 
    
