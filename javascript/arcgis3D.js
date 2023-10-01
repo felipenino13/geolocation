@@ -96,13 +96,18 @@ require([
 
     
     //estilos puntos de municipios
+    //estilos puntos de municipios
     const puntosRenderer = {
       type: "simple",
       symbol: {
         type: "simple-marker",
-        color: "orange",
+        color: [255, 165, 0, 0.6],
         width: "18px",
         height: "18px",
+        outline: {
+          color: [255, 165, 0, 0.8],
+          width: 2 
+        }
 
       }
     }
@@ -413,7 +418,7 @@ require([
       url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/municipios/FeatureServer/0",
       outFields: ["*"], // Consulta todos los atributos
       popupTemplate: popupPuntosMunicipios,   
-      //renderer: puntosRenderer,
+      renderer: puntosRenderer,
     
     });
 

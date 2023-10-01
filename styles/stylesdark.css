@@ -64,7 +64,7 @@ body,
 
 
 .esri-popup--is-docked-top-right, .esri-popup--is-docked-bottom-right{
-    justify-content: flex-start;
+    /*justify-content: flex-start;*/
     margin-top: 100px;
 }
 
