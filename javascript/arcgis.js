@@ -327,7 +327,7 @@ require([
     
 
     // Define contenido del popup de los puntos generales del municipio
-    let x = "<div class='cardName' style='background-image:url({imagenes});'><div class='degrade'></div><div class='tituloPopup'><h2 style='color:white'>{Municipio}</h2><p style='color:white'>{departamento}</p></div></div><hr><b>Rango del cálculo:</b> {rango_calculo_min} Ha- {rango_calculo_max} Ha<br><b>UFH encontradas:</b> {ufhEncontradas}<br><b>UFH líderes</b> {ufhLider}<br><hr><b>Líneas productivas:</b> {lineasProductivas}<br> <b>Líneas agrícolas:</b> {lineasAgricolas}<br><b>Líneas pecuarias:</b> {lineasPecuarias}<br><hr><a class='button-line' href='{link_informe}'><img src='https://raw.githubusercontent.com/felipenino13/geolocation/main/img/book.svg'> Informe PDF</a><br><div style='display:none' class='mapacero'>{capashp}</div>";
+    let x = "<div class='cardName' style='background-image:url({imagenes});'><div class='degrade'></div><div class='tituloPopup'><h2 style='color:white'>{Municipio}</h2><p style='color:white'>{departamento}</p></div></div><hr><b>Rango del cálculo:</b> {rango_calculo_min} Ha- {rango_calculo_max} Ha<br><b>UFH encontradas:</b> {ufhEncontradas}<br><b>UFH líderes</b> {ufhLider}<br><hr><b>Líneas productivas:</b> {lineasProductivas}<br> <b>Líneas agrícolas:</b> {lineasAgricolas}<br><b>Líneas pecuarias:</b> {lineasPecuarias}<br><hr><a class='button-line' href='{link_informe}'><img src='https://raw.githubusercontent.com/felipenino13/geolocation/main/img/book.svg'> Informe PDF</a><br>";
     let y = "<div style='display:none' class='mapacero'>{capashp}</div>";
     //PRUEBA ACTION
     //PRUEBA DEFINE EL BOTON EN EL ARREGLO
