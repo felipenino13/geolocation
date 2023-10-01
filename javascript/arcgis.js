@@ -339,7 +339,7 @@ require([
 
 
     const popupPuntosMunicipios = {
-      title: "Descripción", 
+      title: "Descripción"+y, 
       content: x,
       //content: y,
       collapsed: true, 
