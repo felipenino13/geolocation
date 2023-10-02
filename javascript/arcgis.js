@@ -393,13 +393,34 @@ require([
         //console.log("No se encontró ningún elemento con la clase 'mapacero'.");
       }
       
-      
+      let textufhpop = "Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>";
+      let infoufhpop = [
+        {
+          type: "text",
+          text: textufhpop,
+        },
+        {
+          type: "fields",
+          fieldInfos:[
+            {
+            fieldName: "lineaAgricola",
+            label: "Líneas agricolas"
+            },
+            {
+              fieldName: "lineaPecuarias",
+              label: "Líneas pecuarias"
+            },
+          
+          ],
+        },
+      ];
+
       const ufhMun = new FeatureLayer({
         url: contenidoTexto,       
         renderer: ufhRenderer,
         popupTemplate: {
           title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
-          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>Líneas agricolas: {lineaAgricola}<br><p style='display:inline-block !important;margin-bottom:16px'>Líneas pecuarias: {lineaPecuarias}</p>",
+          content: infoufhpop,
         },
         elevationInfo: "relative-to-scene",
       });
@@ -515,13 +536,36 @@ require([
     document.getElementById("ufh").addEventListener("change", function() {
 
 
+      let textufhpop = "Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>";
+      let infoufhpop = [
+        {
+          type: "text",
+          text: textufhpop,
+        },
+        {
+          type: "fields",
+          fieldInfos:[
+            {
+            fieldName: "lineaAgricola",
+            label: "Líneas agricolas"
+            },
+            {
+              fieldName: "lineaPecuarias",
+              label: "Líneas pecuarias"
+            },
+          
+          ],
+        },
+      ];
+
+
       /*UFH de Pradera*/
       const ufhPradera = new FeatureLayer({
         url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/shppraderaufhsaplicables/FeatureServer/0",
         renderer: ufhRenderer,
         popupTemplate: {
           title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
-          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>Líneas agricolas: {lineaAgricola}<br><p style='display:inline-block !important;margin-bottom:16px'>Líneas pecuarias: {lineaPecuarias}</p>",
+          content:infoufhpop,
         },
         elevationInfo: "relative-to-scene",
       });
@@ -532,7 +576,7 @@ require([
         renderer: ufhRenderer,
         popupTemplate: {
           title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
-          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>Líneas agricolas: {lineaAgricola}<br><p style='display:inline-block !important;margin-bottom:16px'>Líneas pecuarias: {lineaPecuarias}</p>",
+          content: infoufhpop,
         },
         elevationInfo: "relative-to-scene",
       });
@@ -543,7 +587,7 @@ require([
         renderer: ufhRenderer,
         popupTemplate: {
           title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
-          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>Líneas agricolas: {lineaAgricola}<br><p style='display:inline-block !important;margin-bottom:16px'>Líneas pecuarias: {lineaPecuarias}</p>",
+          content: infoufhpop,
         },
         elevationInfo: "relative-to-scene",
       });
@@ -554,7 +598,7 @@ require([
         renderer: ufhRenderer,
         popupTemplate: {
           title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
-          content:"Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Temperatura media: {temp_med}<br>Inundaciones: {inund}<hr><h3>Sistemas productivos</h3>Líneas agricolas: {lineaAgricola}<br><p style='display:inline-block !important;margin-bottom:16px'>Líneas pecuarias: {lineaPecuarias}</p>",
+          content: infoufhpop,
         },
         elevationInfo: "relative-to-scene",
       });
