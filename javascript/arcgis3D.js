@@ -60,11 +60,11 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
     map: map,
     camera: {
       position: {
-        x: -74.635, //Longitude
-        y: 4.636, //Latitude
+        x: -75.635, //Longitude
+        y: 0.504, //Latitude
         z: 200000 //Meters
       },
-      tilt: 75
+      tilt: 65
     }
   });
  
