@@ -69,13 +69,14 @@ require([
       map: map,
       camera: {
         position: {
-          x: -74.635, //Longitude
-          y: 4.636, //Latitude
+          x: -75.635, //Longitude
+          y: 0.504, //Latitude
           z: 200000 //Meters
         },
-        tilt: 75
+        tilt: 65
       }
     });
+ 
 */  
 
 
@@ -603,6 +604,17 @@ require([
         elevationInfo: "relative-to-scene",
       });
 
+      /*UFH de Jenesano*/
+      const ufhJenesano = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/jenesano/FeatureServer/0",
+        renderer: ufhRenderer,
+        popupTemplate: {
+          title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
+          content: infoufhpop,
+        },
+        elevationInfo: "relative-to-scene",
+      });
+
       
     
 
@@ -613,10 +625,12 @@ require([
         map.add(ufhBuesaco);
         map.add(ufhAyapel);
         map.add(ufhPlanadas);
+        map.add(ufhJenesano);
         document.getElementById("escala_colores").style.display = 'flex';
       } 
       
       else{
+        map.layers.removeAt(2);
         map.layers.removeAt(2);
         map.layers.removeAt(2);
         map.layers.removeAt(2);
