@@ -531,7 +531,8 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
     else{
       
       console.log("listo");
-      map.layers.removeAt(2)
+      map.layers.removeAt(2);
+      map.layers.removeAt(1)
     }
 
   });

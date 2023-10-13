@@ -525,7 +525,8 @@ require([
       else{
         
         console.log("listo");
-        map.layers.removeAt(2)
+        map.layers.removeAt(2);
+        map.layers.removeAt(1)
       }
 
     });
