@@ -38,7 +38,6 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
   });
 
  
-  
   //Create scene 3D
   const view = new SceneView({
     container: "viewDiv",
@@ -52,6 +51,7 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
       tilt: 65
     }
   });
+  
 
  
 
@@ -622,6 +622,18 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
       elevationInfo: "relative-to-scene",
     });
 
+    /*UFH de Ventaquema*/
+    const ufhVentaquemada = new FeatureLayer({
+      url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ventaquemada/FeatureServer/0",
+      renderer: ufhRenderer,
+      popupTemplate: {
+        title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
+        content: infoufhpop,
+      },
+      elevationInfo: "relative-to-scene",
+    });
+    
+
     
   
 
@@ -633,10 +645,12 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
       map.add(ufhAyapel);
       map.add(ufhPlanadas);
       map.add(ufhJenesano);
+      map.add(ufhVentaquemada);
       document.getElementById("escala_colores").style.display = 'flex';
     } 
     
     else{
+      map.layers.removeAt(2);
       map.layers.removeAt(2);
       map.layers.removeAt(2);
       map.layers.removeAt(2);
