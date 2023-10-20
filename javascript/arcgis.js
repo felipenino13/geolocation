@@ -627,29 +627,43 @@ require([
         elevationInfo: "relative-to-scene",
       });
       
-
+      
       
     
 
       
       if(ufh.checked){
 
+
+        map.addMany([ufhPradera, ufhBuesaco, ufhAyapel, ufhPlanadas, ufhJenesano, ufhVentaquemada]);
+
+        /*
         map.add(ufhPradera);
         map.add(ufhBuesaco);
         map.add(ufhAyapel);
         map.add(ufhPlanadas);
         map.add(ufhJenesano);
         map.add(ufhVentaquemada);
+        */
         document.getElementById("escala_colores").style.display = 'flex';
+/*
+        console.log(map.layers.length)
+        console.log(map.layers.toArray())
+*/
       } 
       
       else{
-        map.layers.removeAt(2);
-        map.layers.removeAt(2);
-        map.layers.removeAt(2);
-        map.layers.removeAt(2);
-        map.layers.removeAt(2);
-        map.layers.removeAt(2);
+        
+
+        map.layers.removeAt(1);
+        map.layers.removeAt(1);
+        map.layers.removeAt(1);
+        map.layers.removeAt(1);
+        map.layers.removeAt(1);
+        map.layers.removeAt(1);
+
+    
+
         document.getElementById("escala_colores").style.display = 'none';
       }
 

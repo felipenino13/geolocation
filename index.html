@@ -34,10 +34,22 @@
         <meta property="og:image" content="https://raw.githubusercontent.com/felipenino13/geolocation/main/img/og.jpg">
         <meta property="og:url" content="https://felipenino13.github.io/geolocation/">
         <meta property="og:type" content="maps"> <!-- Opcional: article, video, music, etc. -->
+
+        <!-- Development version -->
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+
+        <!-- Production version -->
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
     
         <style>
 
-            
+        #tooltip {
+          background-color: white;
+          color: #333;
+          padding: 5px 10px;
+          border-radius: 4px;
+          font-size: 13px;
+        } 
             
   
         </style>
@@ -128,48 +140,53 @@
             
             <div id="escala_colores" class="escala_UAF">
                 <div class="uno_ufh">
-                    1
+                  <p class="muted"><a href="#" data-bs-toggle="tooltip" data-bs-title="Excelente">1</a></p>
                 </div>
                 <div class="dos_ufh">
-                    2
+                  <p class="muted"><a href="#" data-bs-toggle="tooltip" data-bs-title="Muy Buena">2</a></p>
                 </div>
                 <div class="tres_ufh">
-                    3
+                  <p class="muted"><a href="#" data-bs-toggle="tooltip" data-bs-title="Buena">3</a></p>
                 </div>
                 <div class="cuatro_ufh">
-                    4
+                  <p class="muted"><a href="#" data-bs-toggle="tooltip" data-bs-title="Moderadamente buena">4</a></p>
                 </div>
                 <div class="cinco_ufh">
-                    5
+                  <p class="muted"><a href="#" data-bs-toggle="tooltip" data-bs-title="Moderadamente buena a mediana">5</a></p>
                 </div>
                 <div class="seis_ufh">
-                    6 
+                  <p class="muted"><a href="#" data-bs-toggle="tooltip" data-bs-title="Mediana">6</a></p> 
                 </div>
                 <div class="siete_ufh">
-                    7
+                  <p class="muted"><a href="#" data-bs-toggle="tooltip" data-bs-title="Mediana a regular">7</a></p>
                 </div>
                 <div class="ocho_ufh">
-                    8
+                  <p class="muted"><a href="#" data-bs-toggle="tooltip" data-bs-title="Regular">8</a></p>
                 </div>
                 <div class="nueve_ufh">
-                    9
+                  <p class="muted"><a href="#" data-bs-toggle="tooltip" data-bs-title="Regular a mala">9</a></p>
                 </div>
                 <div class="diez_ufh">
-                    10
+                  <p class="muted"><a href="#" data-bs-toggle="tooltip" data-bs-title="Mala">10</a></p>
                 </div>
                 <div class="once_ufh">
-                    11 
+                  <p class="muted"><a href="#" data-bs-toggle="tooltip" data-bs-title="Mala a muy mala">11</a></p> 
                 </div>
                 <div class="doce_ufh">
-                    12
+                  <p class="muted"><a href="#" data-bs-toggle="tooltip" data-bs-title="Muy mala">12</a></p>
                 </div>
                 <div class="trece_ufh">
-                    13
+                  <p class="muted"><a href="#" data-bs-toggle="tooltip" data-bs-title="Improductiva">13</a></p>
                 </div>
             </div>
         </div>
         <div class="logo">
             <img src="img/logo-uaf.svg" alt="logo">
         </div>
+
+        <script>
+          const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+          const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        </script>
     </body>
 </html>

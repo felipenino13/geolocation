@@ -146,6 +146,14 @@ h2{
     font-size: 11px;
 }
 
+.escala_UAF a{
+    color: white;
+}
+
+.escala_UAF p{
+    margin: 0;
+}
+
 #escala_colores{
     display: none;
 }
