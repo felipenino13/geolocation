@@ -154,6 +154,11 @@ h2{
     margin: 0;
 }
 
+.custom-tooltip {
+    --bs-tooltip-bg: #333;
+    --bs-tooltip-color: white;
+}
+
 #escala_colores{
     display: none;
 }
