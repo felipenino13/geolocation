@@ -35,23 +35,9 @@
         <meta property="og:url" content="https://felipenino13.github.io/geolocation/">
         <meta property="og:type" content="maps"> <!-- Opcional: article, video, music, etc. -->
 
-        <!-- Development version -->
-        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
-
-        <!-- Production version -->
-        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        
     
         <style>
-
-        #tooltip {
-          background-color: white;
-          color: #333;
-          padding: 5px 10px;
-          border-radius: 4px;
-          font-size: 13px;
-        } 
-            
-        
 
         </style>
         
@@ -189,5 +175,10 @@
           const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
           const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
         </script>
+        <!-- Development version -->
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+
+        <!-- Production version -->
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
     </body>
 </html>
