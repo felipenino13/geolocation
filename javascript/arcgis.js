@@ -15,17 +15,11 @@ require([
 
     //"esri/widgets/Legend",
     "esri/views/BasemapView",
-    
-    
-    
-    
-
   ], 
 
   function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search, reactiveUtils, SceneView,/*Legend*/BasemapView,) {
 
     //Config Key
-    
     esriConfig.apiKey = "AAPKc5fe3b3fae3f4c57b616984758b6af86B8CQSYmJhYyx5P8UNpF_iXbhrOQ0qC2SaYMp8ygcbbXOdIxvzQK-vvxz3k9FWXUp";
     
 
@@ -37,8 +31,6 @@ require([
       //basemap: "arcgis-navigation" //navigation
     });
 
-   
-    
     let view = new MapView({
       map: map,
       // center Colombia
@@ -46,10 +38,6 @@ require([
       zoom: 6, // Zoom level
       container: "viewDiv" // Div element
     });
-
-   
-
-    
 
     //Create a mapview
 /*
@@ -86,8 +74,7 @@ require([
     });
       
     view.ui.add(search, "top-left"); //Add to the map
-    
-    
+
 
     
     //estilos puntos de municipios
@@ -559,7 +546,6 @@ require([
           ],
         },
       ];
-
 
       /*UFH de Pradera*/
       const ufhPradera = new FeatureLayer({
