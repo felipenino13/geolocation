@@ -129,7 +129,7 @@ require([
 
           {
             minValue: 1,
-            maxValue: 2,
+            maxValue: 1.9,
             symbol: {
               "type": "simple-fill",
               "width": "1.5px",
@@ -144,13 +144,13 @@ require([
           },
           {
             minValue: 2,
-            maxValue: 3,
+            maxValue: 2.9,
             symbol: {
               "type": "simple-fill",
               "width": "1.5px",
-              "color": [0, 166, 255, 0.5],
+              "color": [12, 96, 151, 0.5],
               outline: {
-                color: [0, 166, 255, 0.5],
+                color: [12, 96, 151, 0.5],
                 width: 1 
               }
             },
@@ -158,7 +158,7 @@ require([
           },
           {
             minValue: 3,
-            maxValue: 4,
+            maxValue: 3.9,
             symbol: {
               "type": "simple-fill",
               "width": "1.5px",
@@ -172,7 +172,7 @@ require([
           },
           {
             minValue: 4,
-            maxValue: 5,
+            maxValue: 4.9,
             symbol: {
               "type": "simple-fill",
               "width": "1.5px",
@@ -186,7 +186,7 @@ require([
           },
           {
             minValue: 5,
-            maxValue: 6,
+            maxValue: 5.9,
             symbol: {
               "type": "simple-fill",
               "width": "1.5px",
@@ -200,15 +200,15 @@ require([
           },
           {
             minValue: 6,
-            maxValue: 7,
+            maxValue: 6.9,
             symbol: {
               "type": "simple-fill",
               "width": "1.5px",
-              "color": [162, 193, 63, 0.5],
+              "color": [92, 170, 132, 0.5],
               //agregar borde al fill
               outline: {
                 // Configuración del borde
-                color: [162, 193, 63, 0.5], // Color del borde
+                color: [92, 170, 132, 0.5], // Color del borde
                 width: 1 // Ancho del borde
               }
             },
@@ -217,13 +217,13 @@ require([
           
           {
             minValue: 7,
-            maxValue: 8,
+            maxValue: 7.9,
             symbol: {
               "type": "simple-fill",
               "width": "1.5px",
-              "color": [245, 229, 170, 0.5],
+              "color": [173, 186, 62, 0.5],
               outline: {
-                color: [245, 229, 170, 0.5],
+                color: [173, 186, 62, 0.5],
                 width: 1 
               }
             },
@@ -231,13 +231,13 @@ require([
           },
           {
             minValue: 8,
-            maxValue: 9,
+            maxValue: 8.9,
             symbol: {
               "type": "simple-fill",
               "width": "1.5px",
-              "color": [250, 216, 91, 0.5],
+              "color": [246, 229, 169, 0.5],
               outline: {
-                color: [250, 216, 91, 0.5],
+                color: [246, 229, 169, 0.5],
                 width: 1 
               }
             },
@@ -245,7 +245,21 @@ require([
           },
           {
             minValue: 9,
-            maxValue: 10,
+            maxValue: 9.9,
+            symbol: {
+              "type": "simple-fill",
+              "width": "1.5px",
+              "color": [241, 214, 116, 0.5],
+              outline: {
+                color: [241, 214, 116, 0.5],
+                width: 1 
+              }
+            },
+            label: "Regular a mala"
+          },
+          {
+            minValue: 10,
+            maxValue: 10.9,
             symbol: {
               "type": "simple-fill",
               "width": "1.5px",
@@ -255,11 +269,11 @@ require([
                 width: 1 
               }
             },
-            label: "Regular a mala"
+            label: "Mala"
           },
           {
-            minValue: 10,
-            maxValue: 11,
+            minValue: 11,
+            maxValue: 11.9,
             symbol: {
               "type": "simple-fill",
               "width": "1.5px",
@@ -269,31 +283,17 @@ require([
                 width: 1 
               }
             },
-            label: "Mala"
-          },
-          {
-            minValue: 11,
-            maxValue: 12,
-            symbol: {
-              "type": "simple-fill",
-              "width": "1.5px",
-              "color": [255, 78, 130, 0.5],
-              outline: {
-                color: [255, 78, 130, 0.5],
-                width: 1 
-              }
-            },
             label: "Mala a muy mala"
           },
           {
             minValue: 12,
-            maxValue: 13,
+            maxValue: 12.9,
             symbol: {
               "type": "simple-fill",
               "width": "1.5px",
-              "color": [161, 71, 29, 0.5],
+              "color": [139, 72, 65, 0.5],
               outline: {
-                color: [161, 71, 29, 0.5],
+                color: [139, 72, 65, 0.5],
                 width: 1 
               }
             },
@@ -301,13 +301,13 @@ require([
           },
           {
             minValue: 13,
-            maxValue: 14,
+            maxValue: 13.9,
             symbol: {
               "type": "simple-fill",
               "width": "1.5px",
-              "color": [75, 51, 32, 0.5],
+              "color": [87, 82, 79, 0.5],
               outline: {
-                color: [75, 51, 32, 0.5],
+                color: [87, 82, 79, 0.5],
                 width: 1 
               }
             },
