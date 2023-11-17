@@ -511,6 +511,7 @@ require([
       renderer: veRenPradera,
       labelingInfo: [textVeredas],
       elevationInfo: "relative-to-scene",
+      opacity: 0.5,
     })
 
     map.add(veredas);
@@ -529,11 +530,11 @@ require([
         if (event.action.id === "veredasMun") {
           
           if(camaraVer) {
-            
+            map.layers.removeAt(1);
+            map.layers.removeAt(2);
           }
           else {
             veredas();
-            
           }
           camaraVer = !camaraVer;
         }
@@ -597,25 +598,27 @@ require([
           "type": "simple-line",
           "width": "1.5px",
           "color": [100, 100, 100, 1],
-        }
+        },
+        
       }
 
       // Municipios layer
-      const featureLayer2 = new FeatureLayer({
+      const layerMunicipios = new FeatureLayer({
+        id: "limitesMunicipales",
         url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/mgn2022_mpio_politico/FeatureServer/0",
         //llama los estilos
         renderer: municipiosRenderer,
+        opacity: 0.5,
       });
 
       if(boton.checked){
-        map.add(featureLayer2);
+        map.layers.add(layerMunicipios);
       } 
       
       else{
-        
         console.log("listo");
-        map.layers.removeAt(2);
-        map.layers.removeAt(1)
+        map.layers.removeAt(1);
+        console.log(map.layers);
       }
 
     });
@@ -742,14 +745,22 @@ require([
       
       else{
         
-
+/*
         map.layers.removeAt(1);
         map.layers.removeAt(1);
         map.layers.removeAt(1);
         map.layers.removeAt(1);
         map.layers.removeAt(1);
         map.layers.removeAt(1);
-
+*/
+        console.log(map.layers);
+        map.layers.removeAt(1);
+        map.layers.removeAt(1);
+        map.layers.removeAt(1);
+        map.layers.removeAt(1);
+        map.layers.removeAt(1);
+        map.layers.removeAt(1);
+        map.layers.removeAt(1);
     
 
         document.getElementById("escala_colores").style.display = 'none';

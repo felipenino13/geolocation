@@ -34,6 +34,7 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
     //basemap: "arcgis-navigation" //navigation
   });
 
+
 /*
   let view = new MapView({
     map: map,
@@ -42,19 +43,10 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
     zoom: 6, // Zoom level
     container: "viewDiv" // Div element
   });
-*/
-  
 
-  //Create a mapview
-/*
-  const view = new MapView({
-    map: map,
-    // center Colombia
-    center: [-74.635, 4.636], // Longitude, latitude
-    zoom: 6, // Zoom level
-    container: "viewDiv" // Div element
-  });
 */
+
+ 
 
 
   //Create scene 3D
@@ -512,6 +504,7 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
     renderer: veRenPradera,
     labelingInfo: [textVeredas],
     elevationInfo: "relative-to-scene",
+    opacity: 0.5,
   })
 
   map.add(veredas);
@@ -530,11 +523,11 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
       if (event.action.id === "veredasMun") {
         
         if(camaraVer) {
-          
+          map.layers.removeAt(1);
+          map.layers.removeAt(2);
         }
         else {
           veredas();
-          
         }
         camaraVer = !camaraVer;
       }
@@ -598,25 +591,27 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
         "type": "simple-line",
         "width": "1.5px",
         "color": [100, 100, 100, 1],
-      }
+      },
+      
     }
 
     // Municipios layer
-    const featureLayer2 = new FeatureLayer({
+    const layerMunicipios = new FeatureLayer({
+      id: "limitesMunicipales",
       url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/mgn2022_mpio_politico/FeatureServer/0",
       //llama los estilos
       renderer: municipiosRenderer,
+      opacity: 0.5,
     });
 
     if(boton.checked){
-      map.add(featureLayer2);
+      map.layers.add(layerMunicipios);
     } 
     
     else{
-      
       console.log("listo");
-      map.layers.removeAt(2);
-      map.layers.removeAt(1)
+      map.layers.removeAt(1);
+      console.log(map.layers);
     }
 
   });
@@ -743,14 +738,22 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
     
     else{
       
-
+/*
       map.layers.removeAt(1);
       map.layers.removeAt(1);
       map.layers.removeAt(1);
       map.layers.removeAt(1);
       map.layers.removeAt(1);
       map.layers.removeAt(1);
-
+*/
+      console.log(map.layers);
+      map.layers.removeAt(1);
+      map.layers.removeAt(1);
+      map.layers.removeAt(1);
+      map.layers.removeAt(1);
+      map.layers.removeAt(1);
+      map.layers.removeAt(1);
+      map.layers.removeAt(1);
   
 
       document.getElementById("escala_colores").style.display = 'none';
