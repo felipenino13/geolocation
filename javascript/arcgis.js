@@ -785,6 +785,28 @@ require([
           elevationInfo: "relative-to-scene",
         }); 
 
+        /*UFH de Puerto Berrio*/
+        const ufhPuertoBerrio = new FeatureLayer({
+          url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ufhpuertoberrio/FeatureServer/0",
+          renderer: ufhRenderer,
+          popupTemplate: {
+            title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
+            content: infoufhpop,
+          },
+          elevationInfo: "relative-to-scene",
+        });
+
+        /*UFH de Tibana*/
+        const ufhTibana = new FeatureLayer({
+          url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ufhtibana/FeatureServer/0",
+          renderer: ufhRenderer,
+          popupTemplate: {
+            title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
+            content: infoufhpop,
+          },
+          elevationInfo: "relative-to-scene",
+        });
+
 
     
 
@@ -792,7 +814,22 @@ require([
       if(ufh.checked){
 
 
-        map.addMany([ufhPradera, ufhBuesaco, ufhAyapel, ufhPlanadas, ufhJenesano, ufhVentaquemada, ufhCajibio, ufhCaucasia, ufhLaVirginia, ufhMarsella, ufhNuevoColon, ufhPlanetaRica]);
+        map.addMany([
+          ufhPradera, 
+          ufhBuesaco, 
+          ufhAyapel, 
+          ufhPlanadas, 
+          ufhJenesano, 
+          ufhVentaquemada, 
+          ufhCajibio, 
+          ufhCaucasia, 
+          ufhLaVirginia, 
+          ufhMarsella, 
+          ufhNuevoColon, 
+          ufhPlanetaRica,
+          ufhPuertoBerrio,
+          ufhTibana
+        ]);
 
         /*
         map.add(ufhPradera);
