@@ -25,6 +25,9 @@ require([
     
     //Key para la capa de los predios
     esriConfig.apiKey = "AAPK4bbcba5ab3e94588a74895d7eb7a4689tNo78a_vMWAp52SOp6i2YclCQ-0zMMNqVs6tLYjAFhl76PQ2KNVI02LdEPSRUC90";
+
+    //cajibio
+    esriConfig.apiKey = "AAPKcc069723fc7242fda67aa6f3c5a1dc44R5aDxs2So375e4y9otWTq6Ydg_T06NpDXtWr4FhZFSqzytue7_i4bLeJYuXbpTI4";
     
     //Create a map
     const map = new Map({
@@ -324,8 +327,8 @@ require([
     
 
     // Define contenido del popup de los puntos generales del municipio
-    let portada = "<div class='cardName' style='background-image:url({imagenes});'><div class='degrade'></div><div class='tituloPopup'><h2 style='color:white'>{Municipio}</h2><p style='color:white'>{departamento}</p></div></div><hr><b>Rango del cálculo:</b> {rango_calculo_min} Ha- {rango_calculo_max} Ha<br><b>UFH encontradas:</b> {ufhEncontradas}<br><b>UFH líderes</b> {ufhLider}<br><hr><b>Líneas productivas:</b> {lineasProductivas}<br>";
-    let linkDTS = "<a class='button-line' href='{link_informe}'><img src='https://raw.githubusercontent.com/felipenino13/geolocation/main/img/book.svg'> Informe PDF</a><br><div style='display:none' class='mapacero'>{capashp}</div><br><div style='display:none' class='mapaVeredas'>{capashpVer}</div>"
+    let portada = "<div class='cardName' style='background-image:url({imagenes});'><div class='degrade'></div><div class='tituloPopup'><h2 style='color:white'>{Municipio}</h2><p style='color:white'>{departamento}</p></div></div><hr><div class='contenidoPop'><b>Rango del cálculo:</b> {rango_calculo_min} Ha- {rango_calculo_max} Ha<br><b>UFH encontradas:</b> {ufhEncontradas}<br><b>UFH líderes</b> {ufhLider}<br><hr><b>Líneas productivas:</b> {lineasProductivas}<br></div>";
+    let linkDTS = "<div class='contenidoPop'><a class='button-line' href='{link_informe}'><img src='https://raw.githubusercontent.com/felipenino13/geolocation/main/img/book.svg'> Informe PDF</a><br><div style='display:none' class='mapacero'>{capashp}</div><br><div style='display:none' class='mapaVeredas'>{capashpVer}</div></div>"
     //let y = "<div style='display:none' class='mapacero'>{capashp}</div><div style='display:none' class='mapaVeredas'>{capashpVer}</div>";
     //PRUEBA ACTION
     //PRUEBA DEFINE EL BOTON EN EL ARREGLO
@@ -531,7 +534,7 @@ require([
           
           if(camaraVer) {
             map.layers.removeAt(1);
-            map.layers.removeAt(2);
+            map.layers.removeAt(1);
           }
           else {
             veredas();
@@ -717,16 +720,81 @@ require([
         },
         elevationInfo: "relative-to-scene",
       });
-      
-      
-      
+
+       /*UFH de Cajibio*/
+       const ufhCajibio = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ufhcajibio/FeatureServer/0",
+        renderer: ufhRenderer,
+        popupTemplate: {
+          title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
+          content: infoufhpop,
+        },
+        elevationInfo: "relative-to-scene",
+      });
+
+        /*UFH de Caucasia*/
+        const ufhCaucasia = new FeatureLayer({
+          url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ufhcaucasia/FeatureServer/0",
+          renderer: ufhRenderer,
+          popupTemplate: {
+            title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
+            content: infoufhpop,
+          },
+          elevationInfo: "relative-to-scene",
+        });   
+        
+        /*UFH de la virginia*/
+        const ufhLaVirginia = new FeatureLayer({
+          url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ufhlavirginia/FeatureServer/0",
+          renderer: ufhRenderer,
+          popupTemplate: {
+            title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
+            content: infoufhpop,
+          },
+          elevationInfo: "relative-to-scene",
+        }); 
+        
+        /*UFH de Marsella*/
+        const ufhMarsella = new FeatureLayer({
+          url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ufhmarsella/FeatureServer/0",
+          renderer: ufhRenderer,
+          popupTemplate: {
+            title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
+            content: infoufhpop,
+          },
+          elevationInfo: "relative-to-scene",
+        });  
+
+        /*UFH de Nuevo Colon*/
+        const ufhNuevoColon = new FeatureLayer({
+          url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ufhnuevocolon/FeatureServer/0",
+          renderer: ufhRenderer,
+          popupTemplate: {
+            title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
+            content: infoufhpop,
+          },
+          elevationInfo: "relative-to-scene",
+        }); 
+
+        /*UFH de Planeta Rica*/
+        const ufhPlanetaRica = new FeatureLayer({
+          url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ufhplanetarica/FeatureServer/0",
+          renderer: ufhRenderer,
+          popupTemplate: {
+            title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
+            content: infoufhpop,
+          },
+          elevationInfo: "relative-to-scene",
+        }); 
+
+
     
 
       
       if(ufh.checked){
 
 
-        map.addMany([ufhPradera, ufhBuesaco, ufhAyapel, ufhPlanadas, ufhJenesano, ufhVentaquemada]);
+        map.addMany([ufhPradera, ufhBuesaco, ufhAyapel, ufhPlanadas, ufhJenesano, ufhVentaquemada, ufhCajibio, ufhCaucasia, ufhLaVirginia, ufhMarsella, ufhNuevoColon, ufhPlanetaRica]);
 
         /*
         map.add(ufhPradera);
@@ -754,6 +822,7 @@ require([
         map.layers.removeAt(1);
 */
         console.log(map.layers);
+        map.layers.removeAt(1);
         map.layers.removeAt(1);
         map.layers.removeAt(1);
         map.layers.removeAt(1);
