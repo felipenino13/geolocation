@@ -26,8 +26,6 @@ require([
     //Key para la capa de los predios
     esriConfig.apiKey = "AAPK4bbcba5ab3e94588a74895d7eb7a4689tNo78a_vMWAp52SOp6i2YclCQ-0zMMNqVs6tLYjAFhl76PQ2KNVI02LdEPSRUC90";
 
-    //cajibio
-    esriConfig.apiKey = "AAPKcc069723fc7242fda67aa6f3c5a1dc44R5aDxs2So375e4y9otWTq6Ydg_T06NpDXtWr4FhZFSqzytue7_i4bLeJYuXbpTI4";
     
     //Create a map
     const map = new Map({
