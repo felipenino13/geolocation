@@ -886,17 +886,17 @@ require([
 
     document.getElementById("predios").addEventListener("change", function() {
     
-      /*
-      const prediosRenderer = {
-        "type": "simple",
-        "symbol": {
-          "type": "simple-line",
-          "width": "1.5px",
-          "color": [100, 100, 100, 1],
-        }
+      
+      //const prediosRenderer = {
+        //"type": "simple",
+        //"symbol": {
+          //"type": "simple-line",
+          //"width": "1.5px",
+          //"color": [100, 100, 100, 1],
+        //}
         
-      }
-    */
+      //}
+    
 
 
     //Render de los estilos
@@ -937,7 +937,7 @@ require([
       
     });
     
-    
+  
     
 /*    
     //options Query filtro
