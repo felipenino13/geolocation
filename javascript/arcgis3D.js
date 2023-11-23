@@ -395,7 +395,7 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
       //console.log("No se encontró ningún elemento con la clase 'mapacero'.");
     }
     
-    let textufhpop = "Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Rango pendiente: {rango_pend}%<br>Temperatura media: {temp_med}°<br>Inundaciones: {inund}<hr>Area UAF mínima: {UAF_Area_min}<br>Area UAF máxima: {UAF_Area_max}<br><hr><h3>Sistemas productivos</h3>";
+    let textufhpop = "Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Rango pendiente: {rango_pend}%<br>Temperatura media: {temp_med}°<br>Inundaciones: {inund}<hr><h4>Cálculo UAF (ha)  </h4>Area UAF mínima: {UAF_Area_min}<br>Area UAF máxima: {UAF_Area_max}<br><hr><h3>Sistemas productivos</h3>";
     let infoufhpop = [
       {
         type: "text",
@@ -632,7 +632,7 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
   document.getElementById("ufh").addEventListener("change", function() {
 
 
-    let textufhpop = "Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Rango pendiente: {rango_pend}%<br>Temperatura media: {temp_med}°<br>Inundaciones: {inund}<hr>Area UAF mínima: {UAF_Area_min}<br>Area UAF máxima: {UAF_Area_max}<br><hr><h3>Sistemas productivos</h3>";
+    let textufhpop = "Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Rango pendiente: {rango_pend}%<br>Temperatura media: {temp_med}°<br>Inundaciones: {inund}<hr><h4>Cálculo UAF (ha)  </h4>Area UAF mínima: {UAF_Area_min}<br>Area UAF máxima: {UAF_Area_max}<br><hr><h3>Sistemas productivos</h3>";
     let infoufhpop = [
       {
         type: "text",
