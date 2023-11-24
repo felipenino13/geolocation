@@ -339,7 +339,7 @@ require([
     const segundaAction = {
       title:"Veredas",
       id:"veredasMun",
-      image: "https://raw.githubusercontent.com/felipenino13/geolocation/main/img/polygon.svg"
+      image: "https://raw.githubusercontent.com/felipenino13/geolocation/main/img/veredas.svg"
     };
 
     let tabla = [
