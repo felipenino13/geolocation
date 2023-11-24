@@ -35,16 +35,7 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
     //basemap: "arcgis-navigation" //navigation
   });
 
-/*
-  let view = new MapView({
-    map: map,
-    // center Colombia
-    center: [-74.635, 4.636], // Longitude, latitude
-    zoom: 6, // Zoom level
-    container: "viewDiv" // Div element
-  });
-*/
-  
+   
 
   //Create a mapview
 /*
@@ -353,11 +344,11 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
       fieldInfos:[
         {
         fieldName: "lineasAgricolas",
-        label: "Lineas agricolas"
+        label: "Líneas agrícolas"
         },
         {
           fieldName: "lineasPecuarias",
-          label: "Lineas pecuarias"
+          label: "Líneas pecuarias"
         },
       
       ],
@@ -395,7 +386,7 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
       //console.log("No se encontró ningún elemento con la clase 'mapacero'.");
     }
     
-    let textufhpop = "Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Rango pendiente: {rango_pend}%<br>Temperatura media: {temp_med}°<br>Inundaciones: {inund}<hr><h4>Cálculo UAF (ha)  </h4>Area UAF mínima: {UAF_Area_min}<br>Area UAF máxima: {UAF_Area_max}<br><hr><h3>Sistemas productivos</h3>";
+    let textufhpop = "Área Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climática: {unidad_cli}<br>Rango pendiente: {rango_pend}%<br>Temperatura media: {temp_med}°<br>Inundaciones: {inund}<hr><h4>Cálculo UAF (ha)  </h4>Área UAF mínima: {UAF_Area_min}<br>Área UAF máxima: {UAF_Area_max}<br><hr><h3>Sistemas productivos</h3>";
     let infoufhpop = [
       {
         type: "text",
@@ -632,7 +623,7 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
   document.getElementById("ufh").addEventListener("change", function() {
 
 
-    let textufhpop = "Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Rango pendiente: {rango_pend}%<br>Temperatura media: {temp_med}°<br>Inundaciones: {inund}<hr><h4>Cálculo UAF (ha)  </h4>Area UAF mínima: {UAF_Area_min}<br>Area UAF máxima: {UAF_Area_max}<br><hr><h3>Sistemas productivos</h3>";
+    let textufhpop = "Área Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climática: {unidad_cli}<br>Rango pendiente: {rango_pend}%<br>Temperatura media: {temp_med}°<br>Inundaciones: {inund}<hr><h4>Cálculo UAF (ha)  </h4>Área UAF mínima: {UAF_Area_min}<br>Área UAF máxima: {UAF_Area_max}<br><hr><h3>Sistemas productivos</h3>";
     let infoufhpop = [
       {
         type: "text",

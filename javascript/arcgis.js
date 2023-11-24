@@ -352,11 +352,11 @@ require([
         fieldInfos:[
           {
           fieldName: "lineasAgricolas",
-          label: "Lineas agricolas"
+          label: "Líneas agrícolas"
           },
           {
             fieldName: "lineasPecuarias",
-            label: "Lineas pecuarias"
+            label: "Líneas pecuarias"
           },
         
         ],
@@ -394,7 +394,7 @@ require([
         //console.log("No se encontró ningún elemento con la clase 'mapacero'.");
       }
       
-      let textufhpop = "Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Rango pendiente: {rango_pend}%<br>Temperatura media: {temp_med}°<br>Inundaciones: {inund}<hr><h4>Cálculo UAF (ha)  </h4>Area UAF mínima: {UAF_Area_min}<br>Area UAF máxima: {UAF_Area_max}<br><hr><h3>Sistemas productivos</h3>";
+      let textufhpop = "Área Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climática: {unidad_cli}<br>Rango pendiente: {rango_pend}%<br>Temperatura media: {temp_med}°<br>Inundaciones: {inund}<hr><h4>Cálculo UAF (ha)  </h4>Área UAF mínima: {UAF_Area_min}<br>Área UAF máxima: {UAF_Area_max}<br><hr><h3>Sistemas productivos</h3>";
       let infoufhpop = [
         {
           type: "text",
@@ -631,7 +631,7 @@ require([
     document.getElementById("ufh").addEventListener("change", function() {
 
 
-      let textufhpop = "Area Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climatica: {unidad_cli}<br>Rango pendiente: {rango_pend}%<br>Temperatura media: {temp_med}°<br>Inundaciones: {inund}<hr><h4>Cálculo UAF (ha)  </h4>Area UAF mínima: {UAF_Area_min}<br>Area UAF máxima: {UAF_Area_max}<br><hr><h3>Sistemas productivos</h3>";
+      let textufhpop = "Área Ha: {Area_ha}<br>Altura msnm: {alt_msnm}<br>Unidad climática: {unidad_cli}<br>Rango pendiente: {rango_pend}%<br>Temperatura media: {temp_med}°<br>Inundaciones: {inund}<hr><h4>Cálculo UAF (ha)  </h4>Área UAF mínima: {UAF_Area_min}<br>Área UAF máxima: {UAF_Area_max}<br><hr><h3>Sistemas productivos</h3>";
       let infoufhpop = [
         {
           type: "text",
