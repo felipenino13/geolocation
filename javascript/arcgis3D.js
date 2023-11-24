@@ -35,7 +35,8 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
     //basemap: "arcgis-navigation" //navigation
   });
 
-   
+
+  
 
   //Create a mapview
 /*
@@ -331,7 +332,7 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
   const segundaAction = {
     title:"Veredas",
     id:"veredasMun",
-    image: "https://raw.githubusercontent.com/felipenino13/geolocation/main/img/polygon.svg"
+    image: "https://raw.githubusercontent.com/felipenino13/geolocation/main/img/veredas.svg"
   };
 
   let tabla = [
