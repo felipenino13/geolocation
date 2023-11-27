@@ -800,6 +800,93 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
         elevationInfo: "relative-to-scene",
       });
 
+      /*UFH de Tuqerrez*/
+      const ufhTuquerrez = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/shp_tuquerrez/FeatureServer/0",
+        renderer: ufhRenderer,
+        popupTemplate: {
+          title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
+          content: infoufhpop,
+        },
+        elevationInfo: "relative-to-scene",
+      });
+
+      /*UFH de Paicol*/
+      const ufhPaicol = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/shp_paicol/FeatureServer/0",
+        renderer: ufhRenderer,
+        popupTemplate: {
+          title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
+          content: infoufhpop,
+        },
+        elevationInfo: "relative-to-scene",
+      });
+
+      /*UFH de Nechi*/
+      const ufhNechi = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/shp_nechi/FeatureServer/0",
+        renderer: ufhRenderer,
+        popupTemplate: {
+          title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
+          content: infoufhpop,
+        },
+        elevationInfo: "relative-to-scene",
+      });
+
+      /*UFH de Guaitarilla*/
+      const ufhGuaitarilla = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/shp_guaitarilla/FeatureServer/0",
+        renderer: ufhRenderer,
+        popupTemplate: {
+          title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
+          content: infoufhpop,
+        },
+        elevationInfo: "relative-to-scene",
+      });
+
+      /*UFH de Carmen de bolivar*/
+      const ufhCarmenDeBolivar = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/shp_el_carmen_de_bolivar/FeatureServer/0",
+        renderer: ufhRenderer,
+        popupTemplate: {
+          title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
+          content: infoufhpop,
+        },
+        elevationInfo: "relative-to-scene",
+      });
+
+      /*UFH de Chaparral*/
+      const ufhChaparral = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/shp_chaparral/FeatureServer/0",
+        renderer: ufhRenderer,
+        popupTemplate: {
+          title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
+          content: infoufhpop,
+        },
+        elevationInfo: "relative-to-scene",
+      });
+
+      /*UFH de Caceres*/
+      const ufhCaceres = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/shp_caceres/FeatureServer/0",
+        renderer: ufhRenderer,
+        popupTemplate: {
+          title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
+          content: infoufhpop,
+        },
+        elevationInfo: "relative-to-scene",
+      });
+
+      /*UFH de Aracataca*/
+      const ufhAracataca = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/shp_aracataca/FeatureServer/0",
+        renderer: ufhRenderer,
+        popupTemplate: {
+          title:"{simb_final} <p class='ufh{clase_ufh}'>{apreciacion}</p>",
+          content: infoufhpop,
+        },
+        elevationInfo: "relative-to-scene",
+      });
 
   
 
@@ -821,7 +908,17 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
         ufhNuevoColon, 
         ufhPlanetaRica,
         ufhPuertoBerrio,
-        ufhTibana
+        ufhTibana,
+        //segunda tanda//
+        ufhTuquerrez,
+        ufhPaicol,
+        ufhNechi,
+        ufhGuaitarilla,
+        ufhCarmenDeBolivar,
+        ufhChaparral,
+        ufhCaceres,
+        ufhAracataca
+
       ]);
 
       /*
@@ -850,6 +947,14 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
       map.layers.removeAt(1);
 */
       console.log(map.layers);
+      map.layers.removeAt(1);
+      map.layers.removeAt(1);
+      map.layers.removeAt(1);
+      map.layers.removeAt(1);
+      map.layers.removeAt(1);
+      map.layers.removeAt(1);
+      map.layers.removeAt(1);
+      map.layers.removeAt(1);
       map.layers.removeAt(1);
       map.layers.removeAt(1);
       map.layers.removeAt(1);
