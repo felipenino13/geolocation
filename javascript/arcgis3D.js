@@ -35,7 +35,7 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
     //basemap: "arcgis-navigation" //navigation
   });
 
-
+  
   
 
   //Create a mapview
@@ -971,6 +971,91 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
     
 
     
+  });
+
+
+  ////////////////////////////////
+  /////////////////////////////////
+  ///////Cambio climatico/////////
+  ///////////////////////////////
+  ////////////////////////////////
+
+  //filtro de las ufh adjudicables
+
+  document.getElementById("cambio").addEventListener("change", function() {
+
+    const camCliRenderer = {
+      type: "class-breaks",
+      field: "CamCliNum",
+      normalizationField: "EDUCBASECY",
+      legendOptions: {
+        title: "Tipos de Unidades Físicas Homogéneas"
+      },
+      defaultSymbol: {
+        type: "simple-fill",
+        color: [255, 255, 255, 0.5],
+        //style: "backward-diagonal",
+        outline: {
+          width: 0.5,
+          color: [50, 50, 50, 0.5]
+        },
+      },
+      defaultLabel: "no data",
+        classBreakInfos: [            
+
+          {
+            minValue: 1,
+            maxValue: 1.9,
+            symbol: {
+              "type": "simple-fill",
+              "width": "1.5px",
+              "style": "forward-diagonal",
+              "color": [255, 137, 57, 0.5],
+              //"label": "hola como estas",
+              outline: {
+                color: [255, 137, 57, 0.5],
+                width: 1 
+              }
+            },
+            label: "Alta"
+          },
+          {
+            minValue: 2,
+            maxValue: 2.9,
+            symbol: {
+              "type": "simple-fill",
+              "width": "1.5px",
+              "style": "diagonal-cross",
+              "color": [255, 0, 57, 0.5],
+              outline: {
+                color: [255, 0, 57, 0.5],
+                width: 1 
+              }
+            },
+            label: "Muy alta"
+          }            
+        ]          
+    } 
+
+    if(cambio.checked){
+      /*Cambio climatico Pradera*/
+      const camCliPradera = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/camclipradera/FeatureServer/0",
+        elevationInfo: "relative-to-scene",
+        renderer: camCliRenderer,
+      });
+
+      map.addMany([camCliPradera,
+      ]);
+
+      console.log("estoy ready cambio");
+      document.getElementById("convencionesCambio").style.display = 'flex';
+
+    }
+    else{
+      console.log("estoy ready cambio si me deseleccion");
+      document.getElementById("convencionesCambio").style.display = 'none';
+    }
   });
 
 
