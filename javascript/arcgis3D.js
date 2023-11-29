@@ -66,6 +66,7 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
   });
 
 
+
   
   //add search widget
   const search = new Search({  //Add Search widget
