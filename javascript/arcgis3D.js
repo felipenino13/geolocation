@@ -35,7 +35,8 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
     //basemap: "arcgis-navigation" //navigation
   });
 
-  
+
+
   
 
   //Create a mapview
@@ -64,7 +65,6 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
     }
   });
 
- 
 
   
   //add search widget
@@ -1045,7 +1045,64 @@ function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Search,
         renderer: camCliRenderer,
       });
 
+      /*Cambio climatico Cajibio*/
+      const camCliCajibio = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/cccajibio/FeatureServer/0",
+        elevationInfo: "relative-to-scene",
+        renderer: camCliRenderer,
+      });
+
+      /*Cambio climatico Planadas*/
+      const camCliPlanadas = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ccplanadas/FeatureServer/0",
+        elevationInfo: "relative-to-scene",
+        renderer: camCliRenderer,
+      });
+
+      /*Cambio climatico Buesaco*/
+      const camCliBuesaco = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ccbuesaco/FeatureServer/0",
+        elevationInfo: "relative-to-scene",
+        renderer: camCliRenderer,
+      });
+
+      /*Cambio climatico Jenesano*/
+      const camCliJenesano = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ccjenesano/FeatureServer/0",
+        elevationInfo: "relative-to-scene",
+        renderer: camCliRenderer,
+      });
+
+      /*Cambio climatico Ventaquemada*/
+      const camCliVentaquemada = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/ccventaquemada/FeatureServer/0",
+        elevationInfo: "relative-to-scene",
+        renderer: camCliRenderer,
+      });
+
+      /*Cambio climatico LaVirginia*/
+      const camCliLaVirginia = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/cclavirginia/FeatureServer/0",
+        elevationInfo: "relative-to-scene",
+        renderer: camCliRenderer,
+      });
+
+      /*Cambio climatico Tibana*/
+      const camCliTibana = new FeatureLayer({
+        url: "https://services6.arcgis.com/4bqDruSLRri6LXWK/arcgis/rest/services/cctibana/FeatureServer/0",
+        elevationInfo: "relative-to-scene",
+        renderer: camCliRenderer,
+      });
+
       map.addMany([camCliPradera,
+        camCliCajibio,
+        camCliPlanadas,
+        camCliBuesaco,
+        camCliJenesano,
+        camCliVentaquemada,
+        camCliLaVirginia,
+        camCliTibana,
+
       ]);
 
       console.log("estoy ready cambio");
