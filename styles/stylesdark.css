@@ -154,6 +154,36 @@ h2{
     margin: 0;
 }
 
+/*cambio climatico*/
+
+.cambioClimatico{
+    position: absolute;
+    z-index: 1;
+    bottom: 20%;
+    right: 5%;
+    background: #333;
+    padding: 8px;
+    flex-wrap: wrap;
+    color: white;
+}
+
+.convencion{
+    display: flex;
+    font-size: 14px;
+    padding-bottom: 4px;
+    width: 100%;
+}
+
+.convencion img{
+    margin-right: 8px;
+}
+
+#convencionesCambio{
+    display: none;
+}
+ /*fin cambio*/
+
+
 .custom-tooltip {
     --bs-tooltip-bg: #333;
     --bs-tooltip-color: white;
